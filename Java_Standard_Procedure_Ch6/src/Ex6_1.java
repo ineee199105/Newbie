@@ -1,7 +1,7 @@
 //class 는 소스파일 하나당 하나만 권장됨. 학습을 위해 부득이하게 하나 더 만든것
 class Ex6_1 { // public 이 없기 때문에 소스파일의 명을 Tv.java로 해도 오류는 발생하지 않음
-			  // 하지만, main method 가 포함되어있는 클래스는 Ex6_1이기 때문에
-			  // 컴파일은 되지만 실행은 안됨 요주의 실수사항
+				// 하지만, main method 가 포함되어있는 클래스는 Ex6_1이기 때문에
+				// 컴파일은 되지만 실행은 안됨 요주의 실수사항
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -15,13 +15,22 @@ class Ex6_1 { // public 이 없기 때문에 소스파일의 명을 Tv.java로 �
 }
 
 class Tv {
-	//Tv의 속성(멤버변수)
+	// Tv의 속성(멤버변수)
 	String color;
 	boolean power;
 	int channel;
-	
-	//Tv의 기능(메서드)
-	void power() { power = !power; }
-	void channelUp() { ++channel; }
-	void channelDown() { --channel; }
+
+	// Tv의 기능(메서드)
+	void power() {
+		power = !power;
+	}
+
+	void channelUp() {
+		++channel;
+	}
+
+	void channelDown() {
+		--channel;
+	}
+
 }

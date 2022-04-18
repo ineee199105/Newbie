@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <script type="text/javascript">
+      // 제어문 - if/if-else/ else-if
+      
+      // if문
+//       if(조건식){
+//     	  조건식의 결과가 참일때 실행하는 실행문;
+//       }
+      // if문은 실행하는 문장이 1줄일때 {}를 생략 가능
+      
+     /*  if(조건식){
+    	  실행문;
+      }
+      
+      if(조건식)
+    	  실행문;
+      
+      if(조건식) 실행문; */
+      
+      
+      // 변수 2개 생성 (숫자 데이터 2개 초기화)
+      // 둘중에서 더 큰수를 찾아서 출력
+      var num1 = 1000;
+      var num2 = 300;
+      
+      if(num1 > num2){
+    	  document.write(num1);
+      }
+      
+      if(num1 < num2){
+    	  document.write(num2);
+      }
+      
+      
+      if(true){
+    	  document.write("Hello~!");
+      }
+      
+      if(1){ //true
+    	  document.write("Hello 1");
+      }
+      if(0){ //false
+    	  document.write("Hello 0 <br>");    	  
+      }
+      if("itwill"){
+    	  document.write("Hello itwill <br>");
+      }
+      
+      // if 조건식 위치에 비교연산이 없이 값만 있는경우
+      // Boolean() 결과를 생각해야함
+      // true : 나머지 전부 
+      // false : 0, null, undefined, ""(공백문자)
+      
+      // 숫자 입력받아서 양수/음수 판별
+      
+      var value = prompt("숫자 하나를 입력해주세요!");
+      
+      document.write("입력값 : "+value+"<br>");
+      
+      if(value > 0){
+		 document.write("양수!");    	  
+      }
+      if(value < 0 ){
+    	  document.write("음수!")
+      }
+      
+      // 사용자의 ID정보를 입력시, 
+      // alert(); 사용하여 "ID"님 안녕하세요~!
+     var id = prompt("사용자의 아이디를 입력하시오.");
+      document.write(id);
+      if(id){
+    	  alert(id+"님 안녕하세요~!");
+      }
+      
+      
+      // if-else 구문
+//       if(조건문){
+//     	  조건이 참일때 실행하는 문장;
+//       }else{
+//     	  조건이 참이 아닐때 실행하는 문장;
+//       }
+      
+      // 홀수, 짝수 계산
+//       if(10%2 == 0){ // 짝수
+//       }
+//       if(20%2 != 0){ // 홀수
+//       }
+      
+//       if(10%2 == 0){ // 짝수
+//       }else{ // 홀수
+//       }
+
+
+         // confirm("메세지");
+         // 회원탈퇴 로직을 구현
+         // "정말로 탈퇴 하시겠습니까?"
+         //  yes(확인) - "정상 탈퇴처리 되었습니다" (alert)
+         //  no(취소) - "계속해서 사용가능합니다!" (alert)
+         var input = confirm("정말로 탈퇴 하시겠습니까?");
+         
+         if(input){
+        	 alert("정상 탈퇴처리 되었습니다");
+         }else{
+        	 alert("계속해서 사용가능합니다!");
+         }
+         
+         // 중첩 if문
+//          if(조건문){
+//         	 if(조건문){
+        		 
+//         	 }
+//          }
+         // 로그인 처리 로직 구현해보기!
+         
+          var userID = "admin";
+          var userPW = "1234";
+         
+         // 아이디, 비밀번호 입력 - prompt
+         var inputID = prompt("아이디를 입력하세요.");
+         var inputPW = prompt("비밀번호를 입력하세요.");
+         
+         // 아이디가 회원정보랑 동일한지 체크
+         if(inputID == userID){
+        	 //아이디 동일(회원)
+			 if(inputPW == userPW){
+				 // 아이디 동일 + 비밀번호 동일 =>  본인
+				 alert(inputID+"님 로그인 성공! ");
+				 
+			 }else{
+				 // 아이디 동일, 비밀번호 오류
+				 //alert(" 비밀번호가 오류!! ");				 
+				 alert(" 아이디 혹은 비밀번호가 오류!! ");				 
+			 }        	 
+        	 
+         }else{
+        	 //아이디가 다름(비회원)
+        	 //alert(" 회원정보가 없습니다! ");
+		     alert(" 아이디 혹은 비밀번호가 오류!! ");				 
+         }
+         // 비밀번호가 회원정보랑 동일한지 체크
+         
+         
+         
+         if( (userID == inputID) && (userPW == inputPW) ){
+        	 
+         }else{
+        	 
+         }
+         
+         ///////////////////////////////////////////////////////////////
+		 // else if문
+         //          if(조건문){
+        	 
+		 //          }else if(조건문){
+        	 
+		 //          }else if(조건문){
+        	 
+		 //          }else{
+        	 
+		 //          }
+         
+         
+         // 사용자 입력을 받아서 처리 (현재 몇월 입니까?)
+         // 3~5  봄 6~8 여름 9~11 가을  12~2 겨울
+         // => 입력받은 월의 계절을 출력
+         
+         
+         // 사용자에게 현재 월을 입력받는다. (prompt)
+         var month = prompt("현재 몇월 입니까?");
+         
+         //document.write(' month : '+month);
+         alert(' month : '+month);
+         console.log(' month : '+month);
+         
+         // 입력받은 월이 어떤 계절인지를 판단 (if - else)
+         // 결과에 따른 계절출력
+         if(3<= month && month<=5){
+        	 alert("봄");
+         }else if(6<= month && month<=8){
+        	 alert("여름");
+         }else if(9<= month && month<=11){
+        	 alert("가을");
+//         }else if(1<= month && month<=2 || month==12){
+         }else if(month ==1  || month==2 || month==12){
+        	 alert("겨울");
+         }else{
+        	 alert("1~12월까지 정보를 입력하세요!");
+         }
+         
+         
+         // 학생의 점수를 학점으로 계산해주는 계산기 만들기 
+         // 90 ~ 100 A  80~89 B  70 ~79 C  60~69 D  0~59 F
+         
+         var score = 70;
+         
+         if(90 <= score && score <=100){
+        	 alert("A");
+         }else if(80 <= score && score <=89){
+        	 alert("B");
+         }else if(70 <= score && score <=79){
+        	 alert("C");
+         }else if(60 <= score && score <=69){
+        	 alert("D");
+         }else{
+        	 alert("F");
+         }
+         
+         
+         if(score>=90){
+        	 
+         }else if(score >=80){
+        	 
+         }else if(score >=70){
+        	 
+         }else if(score >=60){
+        	 
+         }else{
+        	 
+         }
+         
+         
+         // switch-case문
+         // 조건식 사용 X, 숫자,문자데이터를 사용해서 체크
+         
+         // 종료조건
+         // 1) 정상적으로 모든 코드 실행(default문 실행한경우)
+         // 2) 값을 만족하는 케이스를 만났을때, 실행후 break문을 만난경우
+         // 3) 값을 만족하는 케이스를 만났을때, 실행후 break문이 없는경우
+         //    이후의 모든코드를 실행함(break문을 찾을때까지,default문 실행시 까지)
+         
+       /*   
+         switch(변수){
+         case 값1:
+        	 실행문;
+        	 [break;]
+         case 값2:
+        	 실행문;
+        	 [break;]
+         case 값3:
+        	 실행문;
+        	 [break;]
+         default:
+        	 실행문;
+         
+         }
+          */
+         
+         
+         var num = "java";
+          
+         switch (num){
+         case "java":
+        	 alert("자바");
+         case 10:
+        	 alert(10);
+//         	 break;
+         case 9:
+        	 alert(9);
+//         	 break;
+         case 8:
+        	 alert(8);
+//         	 break;
+         case 7:
+        	 alert(7);
+        	 break;
+         default:
+        	 alert(0);
+         } 
+          
+          
+         /////////////////////////////////////////////////
+         // 학생의 점수를 학점으로 계산해주는 계산기 만들기 (switch-case) 
+         // 90 ~ 100 A  80~89 B  70 ~79 C  60~69 D  0~59 F
+         
+         // 100     A
+         // 99 - 90 A
+         // 89 - 80 B
+         // 79 - 70 C
+         // 69 - 60 D
+         // 59 - 0  F
+         score = 80;
+         
+         // Math.floor(값) => 소수점 이하 버림
+         //alert( Math.floor(85/10) );
+         var tmp = Math.floor(score/10);
+         var grade = "";
+         
+         switch(tmp){  // 10 9 8 7 6 5 4 3 2 1 0 
+         case 10:
+        	 //alert("A");
+        	 //break;
+         case 9:
+        	 //alert("A");
+        	 grade = "A";
+        	 break;
+         case 8:
+        	 //alert("B");
+        	 grade = "B";
+        	 break;
+         case 7:
+        	 //alert("C");
+        	 grade = "C";
+        	 break;
+         case 6:
+        	 //alert("D");
+        	 grade = "D";
+        	 break;
+         default:
+       		 //alert("F");
+         	 grade = "F";
+         }
+         
+         alert("등급 : "+grade);
+         
+      
+  
+  </script>
+</head>
+<body>
+   <h1>/js1/test3.html</h1>
+
+</body>
+</html>

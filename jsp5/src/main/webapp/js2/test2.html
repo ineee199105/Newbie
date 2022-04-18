@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		// 배열객체	 (Array)
+		//  데이터를 한번에 연속된 공간에 여러개 저장하는 객체
+		
+		// 배열 객체
+		//          |1|2|3|4|5|
+		//   인덱스  0 1 2 3 4
+		
+		// 배열의 요소사용하기
+		// 참조변수[인덱스값];		
+		
+		
+		// 배열객체 생성
+		// 1) var 참조변수 = new Array();
+		// 2) var 참조변수 = new Array(값,값,값,....);
+		// 3) var 참조변수 = [ 값,값,값,... ];
+		
+		
+		var arr1 = new Array();
+		arr1[0] = 100;
+		arr1[1] = 200;
+		arr1[2] = 300;
+		arr1[3] = 400;
+		arr1[4] = 500;
+		
+		document.write(arr1[0]);
+		document.write(arr1[1]);
+		document.write(arr1[2]);
+		document.write(arr1[3]);
+		document.write(arr1[4]);
+		
+		document.write("<hr>");
+		// "arr1[0] = 100"
+		
+		for(var i=0;i<5;i++){
+			document.write("arr1["+i+"] ="+arr1[i]+"<br>");
+		}
+		document.write("<hr>");
+		// "arr1[0] = 100"
+		
+		for(var i=0;i<arr1.length;i++){
+			document.write("arr1["+i+"] ="+arr1[i]+"<br>");
+		}
+		document.write("<hr>");
+		
+		// for~in 구문
+		for(var i in arr1){
+			document.write(arr1[i]);
+		}
+		
+		// 65,98,63,79,80  => 배열 저장 => 총합 계산
+		var arr2 = [ 65,98,63,79,80 ];
+		
+		var sum = 0;
+		for(var i=0;i<arr2.length;i++){
+			sum += arr2[i];
+		}
+		document.write("총점 : "+sum+"<br>");
+		
+		// [45,37,88,96,13,76,84,99,55,25]
+		// => 배열에 저장 => 가장 큰수 찾기
+		var arr3 = [45,37,88,96,13,76,84,99,55,25,103];
+		
+		var maxData = arr3[0];
+		for(var i=1;i<arr3.length;i++){
+			if(maxData < arr3[i]){
+				maxData = arr3[i];
+			}
+		}
+		
+		document.write("최대값 : "+maxData+"<br>");
+		
+		
+		document.write("<hr>");
+		// Array객체-속성
+		// Array객체-동작
+		
+		var foods = [ "apple","banana","lemon","orange" ];
+		var numbers = [ 3,6,7,5,8,9,2,1 ];
+		
+		for(var i in foods){
+			document.write(foods[i]+", ");
+		}
+		document.write("<hr>");
+		for(var i=0;i<numbers.length;i++){
+			document.write(numbers[i]+" ");
+ 		}
+		document.write("<hr>");
+		
+		document.write( foods.join(",") );
+		
+		document.write("<hr>");
+		
+		document.write(foods.join(numbers));
+		
+		document.write("<hr>");
+		// numbers 배열의 요소의 값을 정렬
+		
+		document.write(numbers.sort());
+		document.write("<hr>");
+		document.write(numbers.reverse());
+		
+		document.write("<hr>");
+		////////////////////////////////////////////////////////////////
+		// 문자 객체 (String)
+		// var 참조변수 = new String("문자");
+		// var (참조)변수 = "문자";
+		
+		// => 문자객체는 배열이다.
+		
+		var msg = "itwill";
+		document.write(msg[0]);
+		document.write(msg.length);
+		
+		document.write("<hr>");
+		// 문자객체 - 동작(스타일)
+		document.write(msg.bold()+"<br>");
+		document.write(msg.italics()+"<br>");
+		document.write(msg.fontsize(15)+"<br>");
+		document.write(msg.fontcolor('blue')+"<br>");
+		
+		// 위 동작을 한번에 처리 => 채이닝 기법
+		document.write(msg.bold().italics().fontsize(15).fontcolor('red'));
+		
+		document.write("<hr>");
+		// 문자객체 - 동작(데이터)
+		
+		document.write(msg.toUpperCase()+"<br>");
+		document.write(msg.toLowerCase()+"<br>");
+		
+		//msg  |I|T|W|I|L|L|
+		//      0 1 2 3 4 5 
+		document.write(msg[2]+"<br>");
+		document.write(msg.charAt(2)+"<br>");
+		
+		msg = "itwill";
+		var ck = false;
+		// Q) msg 변수에 'G'가 포함되어있는지 검사
+		for(var i =0;i<msg.length;i++){
+			if(msg.charAt(i) == 'G'){
+				ck = true;				
+				break;
+			}
+		}
+	    
+		if(ck)
+			document.write("G 가 있다<br>");
+		else
+			document.write("G 가 없다<br>");	
+		
+		
+		// substring(), slice(), substr()
+		msg = "itwill busan";
+		
+		// substring(시작값,끝값 -1)
+		document.write(msg.substring(1, 3)+"<br>");
+		// substring(시작값)
+		document.write(msg.substring(1)+"<br>");
+		// slice(시작,끝-1),substr(시작,개수)
+		
+		// indexOf(문자) / lastIndexOf(문자)
+		// => 해당문자가 있을경우 문자의 인덱스번호를 리턴
+		//          "    없을경우  -1 리턴
+		
+		// Q) msg 값 'h' 있는지 없는지 체크
+		if(msg.indexOf('h')>=0){
+			document.write(" 데이터 있음 <br>");
+		}else{
+			document.write(" 데이터 없음 <br>");
+		}
+		
+		// split(구분문자,개수) 
+		document.write(msg.split(" ",2));
+		
+		var tmp = msg.split(" ",2);
+		// tmp[0];
+		// tmp[1];
+		document.write(msg.split(" ")[1]);
+		
+		
+		document.write("<hr>");
+		
+		// "901212-1234123";
+		// => 사용자의 성별을 판별 (남/여)
+		
+		var jumin = "901212-6234123";
+		
+		if(jumin.charAt(7)=="1" || jumin.charAt(7)=="3"){
+		 	document.write("남성 <br>");
+		}else if(jumin.charAt(7)=="2" || jumin.charAt(7)=="4"){
+			document.write("여성 <br>");
+		}else{
+			document.write("정확한 주민번호를 입력하세요! <br>");
+		}
+		
+		document.write("<hr>");
+		
+		// 010-1234-7896 => 010-****-7896
+		// 사용자의 전화번호를 입력 prompt()
+		// " 당첨자 연락처 : 010-****-7896 "
+		
+// 		var inputTel = prompt("전화번호를 입력하세요");
+// 		document.write(" 당첨자 연락처 : "+inputTel.slice(0, 3)+"-****-"+inputTel.substring(9));
+		
+		// 사용자 이메일 체크
+		// 1. '@'반드시 포함
+		// 2. ".co.kr",".com",".net",".or.kr",".go.kr"
+		// => 1,2번 조건 모두를 포함하는 주소만 이메일 주소로 인정
+		
+		var inputEmail = prompt("이메일주소를 입력하세요");
+		
+		if(inputEmail.indexOf('@')>2){
+			alert("정상 이메일(조건1)");
+			
+			var emailArr = [".co.kr",".com",".net",".or.kr",".go.kr"];
+			
+			for(var i=0;i<emailArr.length;i++){
+				if(inputEmail.indexOf(emailArr[i])>=0){
+					alert("정상 이메일(조건2)");
+				}		
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+	
+	
+	
+	</script>
+</head>
+<body>
+	<h1>test2.html</h1>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!-- ctrl + shfit + / : 주석문 -->
+<!DOCTYPE html>
+<!--  이코드는 html5(웹표준)문법으로 작성되었습니다.  -->
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 첫시간</title>
+
+<script src="myScript.js"></script>
+
+<script type="text/javascript">
+   alert("head 실행!");
+   
+   var color = {
+	        brown: "color:#560000;font-size:11px;",
+	        red: "color:#d83128;font-size:11px;",
+	        yellow: "color:#ea991b;font-size:11px;",
+	        green: "color:#93ba2f;font-size:11px;",
+	        blue: "color:#4da4e0;font-size:11px;"
+	    };
+
+   console.log(
+           "%c   ____                                    \
+           \n%c  / ___|___  _   _ %c_ __   %c__ _ %c_ __   %c__ _ \
+           \n%c | |   / _ \\| | | %c| '_ \\ %c/ _` %c| '_ \\ %c/ _` | \
+           \n%c | |__| (_) | |_| %c| |_) %c| (_| %c| | | | %c(_| | \
+           \n%c  \\____\\___/ \\__,_%c| .__/ %c\\__,_%c|_| |_|%c\\__, | \
+           \n%c                  %c|_|                %c|___/ \
+           \n      %cLife is too short, you need cou%cp%ca%cn%cg.\n", 
+           color.brown, 
+           color.brown, color.red, color.yellow, color.green, color.blue, 
+           color.brown, color.red, color.yellow, color.green, color.blue, 
+           color.brown, color.red, color.yellow, color.green, color.blue, 
+           color.brown, color.red, color.yellow, color.green, color.blue, 
+           color.brown, color.red, color.blue, 
+           color.brown, color.red, color.yellow, color.green, color.blue
+       );
+   
+   
+   
+</script>
+
+</head>
+<body>
+   <h1>test1.html</h1>
+   
+   <a href="javascript:alert('하이퍼링크 실행!');"> 자바스크립트_하이퍼링크 </a>
+   
+   
+   <script type="text/javascript">
+      alert("body 실행!");   
+   </script>
+   
+</body>
+</html>

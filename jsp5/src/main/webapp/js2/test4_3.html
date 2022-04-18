@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+
+  <h1>test4_3.html</h1>
+  
+  
+    <input type="button" value="뒤로(-1)" onclick=" history.go(-1); ">
+    <input type="button" value="뒤로(-2)" onclick=" history.go(-2); ">
+    
+    
+
+     <hr><hr><hr>
+     
+    <h2>
+     이미지 객체
+     window.document.images[인덱스] . 속성
+                                    . 동작()
+                                    
+     window.document.name. 속성
+                         . 동작()              
+     </h2> 
+    
+    <img alt="아이티윌" src="itwill.png" name="a1">
+    
+    <img src="java.png" onmouseover=" document.images[1].src='java.png';" 
+                        onmouseout="document.images[1].src='js.png';">
+    <img src="js.png">
+    
+     <script type="text/javascript">
+     // navigator 객체 : 방문한 클라이언트의 정보를 처리하는 객체(브라우저,OS)
+     // alert(navigator.userAgent);
+    
+      //alert(document.images[0]);
+      //console.log(document.images[0]);
+      
+      // java.png 이미지 정보를 js.png 변경
+      document.images[1].src="js.png";
+      
+      // 버튼 클릭 -> border속성 변경  2
+      function fun1(){
+    	  
+    	  document.images[0].border = 2;
+    	  document.images[1].border = 2;
+    	  document.images[2].border = 2;
+    	  
+      }
+    </script>
+    
+    <input type="button" value="border변경하기"  onclick="fun1();">
+    
+    
+    
+
+</body>
+</html>

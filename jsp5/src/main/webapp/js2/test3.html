@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BOM객체</title>
+	<script type="text/javascript">
+	  // 이벤트 : 브라우저(객체)에서 클라이언트(사용자)가 취하는 모든 동작
+	  // 이벤트 핸들러 : 자바스크립트로 이벤트를 실행하는 동작
+	  
+	  function Hello(){
+		  alert('Hello~!');
+	  }
+	  
+	  
+	  // window 객체 - 동작
+	  // window 객체 정보는 생략 가능
+	  //window.alert("안녕하세요!");
+	  //alert("안녕하세요!");
+	  
+	  // window-open();  새창열기
+	  // (window.)open("url 경로","창이름","옵션값");
+	  
+	  //window.open();
+	  //window.open("","","width=300,height=300");
+	  
+	  
+	  function winOpen(){
+		  open('http://www.naver.com','','width=300,height=300');
+	  }
+	  
+	  // 창닫기 
+	  // window.close();
+	  function winOpen2(){
+		  open('test3_1.html','','width=600,height=300');
+	  }
+	  
+		
+	</script>
+	
+	<style type="text/css">
+	  *{
+	  	 //background: lime;
+	   }
+	
+	</style>
+	
+</head>
+<body>
+	<h1>test3.html</h1>
+	<h2>이벤트</h2>
+	<!-- onXXXXX 속성의 값은 JS코드 실행가능  -->
+	<input type="button" value="버튼" onclick=" alert('버튼 클릭!');"> <br>
+	
+	<input type="button" value="Hello" onclick=" Hello(); "> <br>
+	<!-- 버튼을 더블 클릭시 "더블!" 출력 -->
+	<input type="button" value="더블클릭" ondblclick=" alert('더블!!!');"> <br>
+	
+	<input type="button" value="버튼2" onmouseover=" alert('over!');" onmouseout="alert('out!')"><br>
+	
+	<hr>
+	
+	<input type="button" value="변경하기" onclick=" style.background='yellow'; "><br>
+	
+	<hr>
+	<h2> 브라우저 내장객체 (BOM)</h2>
+	<!-- 계층형 구조 -->
+	
+	window-[document,screen,location,history,...]
+	           |        |        |      |
+	           ...
+	<hr>
+	
+	<!-- 새창열기 버튼 생성(naver.com) -->
+	<input type="button" value="새창열기" onclick=" winOpen(); ">     <br>
+	
+	<!-- test3_1.html 페이지를 새창으로 열기,
+	     새창 종료하는 버튼 생성후 동작
+	 -->
+	 <input type="button" value="새창(3_1)" onclick=" winOpen2(); "> <br>     
+	           
+	
+	<hr>
+	
+	<h2>window/document 객체</h2>
+	
+	 window.document.속성;<br>
+	  => title, location, bgColor, fgColor,...<br>
+	 window.document.동작(); <br>
+	  => write();<br>
+    <hr>
+    
+    <script type="text/javascript">
+        function fun1(){
+        	alert(window.document.title);	
+        	alert(document.location);
+        	alert(document.bgColor);
+        	alert(document.fgColor);
+        }   
+        
+        function fun2(){
+           document.bgColor='yellow';
+           document.fgColor='red';
+        }    
+        
+        function fun3(c){
+        	document.bgColor = c;
+        }
+        
+    </script>    
+    <input type="button" value="document객체 속성확인" onclick=" fun1(); "> <br>	  
+	<!-- 버튼 클릭시 배경색 변경(yellow), 글자색 변경(red) -->
+	
+	<input type="button" value="속성값 변경" onclick="fun2();"> <br>
+	
+	<input type="radio" name="myColor" value="test" onclick=" fun3('pink'); "> 버튼1(pink)
+	<input type="radio" name="myColor" onclick=" fun3('orange'); "> 버튼2(orange)
+	<input type="radio" name="myColor" onclick=" fun3('purple'); "> 버튼3(purple)
+	
+	<hr>
+	<h2> location 객체 </h2>
+	
+	location.속성; <br>
+	 => href, host, hostname,protocol, port
+	<hr>
+	
+	location.동작(); <br>
+	 => reload(), replace()
+	<hr>
+	<script type="text/javascript">
+	  function funLoc(){
+		  document.write("href : "+window.location.href+"<br>");
+		  document.write("host : "+window.location.host+"<br>");
+		  document.write("hostname : "+location.hostname+"<br>");
+		  document.write("protocol : "+location.protocol+"<br>");
+		  document.write("port : "+location.port+"<br>");
+	  }	
+	  
+	  //location.href='test2.html'; //페이지 이동
+	</script>
+	
+	<!-- 버튼 클릭 location속성정보를 모두 화면에 출력 -->
+	<input type="button" value="location 정보출력" onclick="funLoc();"><br>
+	
+	
+	
+	
+	
+	
+	
+
+</body>
+</html>

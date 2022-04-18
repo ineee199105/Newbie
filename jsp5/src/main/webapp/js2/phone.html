@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <script type="text/javascript">
+  
+    var phone = new Object();
+    
+    phone.TelNo = "010-1234-4567";
+    phone.APP = "KaKaO";
+    
+    function phoneON(){
+    	alert("전원  ON");
+    }
+    phone.OFF = function(){
+    	alert("전원 OFF");
+    }
+    
+    phone.sendMSG = function (app,tel,msg){
+    	alert(app+"프로그램을 사용중");
+    	alert(tel+" : "+msg);
+    }
+     
+    phoneON();
+    
+    phone.sendMSG(phone.APP,phone.TelNo,"오늘 마치고 커피 ㄱㄱ");
+  
+  
+  </script>
+</head>
+<body>
+    <h1>phone.html</h1>
+    <!-- 휴대폰 객체 1생성
+        휴대폰 켜서 -> 카카오톡 친구 메세지 보내기    
+        
+        휴대폰객체, 연락처, 애플리케이션정보
+     -->
+    
+    
+    
+
+</body>
+</html>

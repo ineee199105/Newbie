@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+    // 자바스크립트 코드 작성
+    //alert('자바스크립트 실행!');
+    
+    //document.write('안녕하세요!');
+    // -> 화면(HTML)에 출력하는 문장
+    
+    document.write('"안녕"하세요! <br>');
+    document.write("\"안녕\"                                   하세요!");
+    
+
+    // 한줄짜리 주석문
+    /* 여러줄짜리 주석문 */
+    
+    // 변수 : 변하는 데이터를 저장하는 메모리공간
+    
+    // 1)변수의 선언
+    // var 변수명;
+    // 2)변수 초기화
+    //  변수명 = 초기값;
+    // 3)변수 사용
+    
+    // 식별자 생성규칙
+    //  $,_  사용가능, 영문자, 숫자 사용가능
+       // var 100Name=100;(x)
+    // 예약어 사용불가
+    // 대소문자 구분
+    
+     document.write("<br>");
+    
+    
+    // 문자형 데이터 : 데이터값을 "",'' 감싸놓은 데이터 
+    // 내이름을 저장하는 변수를 사용하여 초기화후 출력
+    
+    var myName = "김학생";
+    document.write(myName);
+    document.write("<br>");
+    
+    var tag1 = "<h1>홍길동</h1>";
+    
+    document.write(tag1);
+    document.write("<br>");
+    
+    // tag2 변수를 사용해서 변경되는 이름도 모두 h1태그가 적용되는 코드를 구현
+    var tag2 ="<h1>"+myName+"</h1>";
+    document.write(tag2);
+    document.write("<br>");
+    
+    
+    //숫자형 데이터
+    var number = 1000;
+    document.write(number);
+    document.write("<br>");
+    document.write(number+100);
+    document.write("1000");//문자
+    document.write("<br>");
+    // "1000" + 100
+    document.write( Number("1000")+1000 );
+    // Number("1000") : 문자형태의 숫자데이터를 숫자형태로 변경
+    
+     document.write("<br>");
+    // 논리형 데이터 : true,false
+    document.write(10 > 20);
+    // Boolean() - true : 0 , null, undefined를 제외한 모든 데이터
+    //           \ false : 0 , null, undefined
+     document.write("<br>");
+    document.write(Boolean(0));
+    
+    document.write("<br>");
+    document.write(Boolean(1));
+    
+    
+    // null, undefined 데이터타입
+    
+    // undefined : 변수에 아무런 값도 등록되어있지 않다.
+    // null : 아무것도 없다.
+    // => 변수의 값을 초기화
+    // var name = null; (JavaScript)
+    // String name = null; (java)
+    
+    
+    // typeof [변수,데이터값];
+    
+    var tmp = typeof "1000";
+    document.write(tmp);
+    document.write(typeof "1000");
+    document.write(typeof number);
+    document.write("<hr>");
+    // 연산자
+    // 1. 산술연산자 ( + - * / % )
+    // 2. 비교연산자 ( == != > < >= <=  === !==)
+    
+    var tmp1 = 100; // 숫자100
+    var tmp2 = "100"; // 문자100
+    
+    document.write(tmp1 == tmp2);
+    // 데이터타입 상관없이 값만 비교
+    document.write("<hr>");
+    document.write(tmp1 === tmp2);
+    // 데이터타입과 데이터 값 모두를 비교
+    document.write("<hr>");
+    // 3. 대입연산자 (+ 복합대입연산자)
+    // (=  += -= *= /= %= )
+    // 4. 증감연산자
+    //  (++A  A++  --A  A--)
+    // 5. 논리연산
+    //   ( &&  ||  ! )
+    // 6. 삼항연산
+    //  ( 조건식? 참:거짓 )
+    
+    
+	document.write("<hr>");
+    
+   document.write("<table border='1'>");
+   document.write("<tr>");
+   document.write("<td>10</td>");
+   document.write("<td>20</td>");
+   document.write("<td>30</td>");
+   document.write("</tr>");
+   document.write("<tr>");
+   document.write("<td>4</td>");
+   document.write("<td>5</td>");
+   document.write("<td>6</td>");
+   document.write("</tr>");
+   document.write("</table>");
+   
+   document.write("<hr>");
+   
+   var tableTag = "";
+   tableTag += "<table border='1'>";
+
+   for(var i=1;i<=5;i++){
+	   tableTag += "<tr>";
+	   tableTag += "<td>"+myName+"</td>";
+	   tableTag += "<td>20</td>";
+	   tableTag += "<td>30</td>";
+	   tableTag += "</tr>";
+   }
+   
+   tableTag += "</table>";
+   
+   document.write(tableTag);
+   
+   
+   
+   
+   
+    
+</script>
+
+
+</head>
+<body>
+   <h1>/js1/test2.html</h1>
+   
+   <table border="1">
+      <tr>
+         <td>10</td>
+         <td>20</td>
+         <td>30</td>
+      </tr>
+      <tr>
+         <td>4</td>
+         <td>5</td>
+         <td>6</td>
+      </tr>
+   </table>
+   
+   
+   
+   
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	  // 객체기반의 프로그래밍언어
+	  // 객체(Object) : 눈 앞에 보이는 모든 대상  -> 객체 추상화 -> 객체 모델링
+	  
+	  // 객체 - 1) 속성
+	  //        2) 동작
+	  
+	  // EX) 휴대폰 - 속성 : 컬러,브랜드,크기,모델명,.... (명사)-변수
+	  //            - 동작 : 전원켜기/끄기,전화하기,문자하기,인터넷하기 (동사)-메서드
+	  
+	  //객체.속성 = 값;
+	  //객체.메서드();
+	  
+	  // LG TV (객체)
+	  // LGTV.크기 = 100인치;
+	  // LGTV.화소 = 500만;
+	  // LGTV.소리UP();
+	  // LGTV.전원OFF();
+	  
+	  // 객체의 종류
+	  // 1) 내장객체 : 자바스크립트 엔진 내장되어있는 객체
+	  // 2) 브라우저 객체 모델 (BOM) : 브라우저에 내장된 객체 (계층형 구조)
+	  // 3) 문서 객체 모델 (DOM) : HTML문서 구조를 표현하는 객체
+	  
+	  
+	  // 객체 생성
+	  // 참조변수(인스턴스 네임) = new 생성함수();
+	  
+	  
+	  // LGTV 객체 생성
+	  var LGTV = new Object();
+	  
+	  LGTV.size = 100;
+	  LGTV.pixel = "500만";
+	  // 가격 
+	  LGTV.price = "200만원";
+	  // 모델명
+	  LGTV.model = "lg111222333";
+	  
+	  // TV의 모델명, 가격정보를 출력
+	  document.write("모델명 : "+LGTV.model);
+	  document.write("가격 : "+LGTV.price);
+	  
+	  // 삼성휴대폰 - S22(모델), Black(색상), 100만원(가격)
+	  //  삼성 휴대폰 정보를 한번에 알려주는 기능(동작)을 구현 
+	  
+	  var samsung = new Object();
+	  
+	  samsung.model = "S22";
+	  samsung.color = "Black";
+	  samsung.price = "100만원";
+	  
+	  function showInfo(){
+		  document.write("모델명 : "+samsung.model+"<br>");
+		  document.write("색상 : "+samsung.color+"<br>");
+		  document.write("가격 : "+samsung.price+"<br>");
+	  }
+	  
+	  showInfo();
+	  
+	  /////////////////////////////////////////////////////////////////////////
+	  // 내장 객체 
+	  
+	  // 날짜정보(시간정보)를 저장하는 객체 Date
+	  
+	  var today = new Date();
+	  //document.write(day);
+	  // 년/월/일 => 출력
+	  
+	  document.write("년 : "+today.getFullYear()+"<br>");
+	  // document.write("년 : "+today.getYear()+"<br>");
+	  document.write("월 : "+(today.getMonth()+1)+"<br>");
+	  document.write("일 : "+today.getDate()+"<br>");
+	  
+	  
+	  // [ 2022-3-8 (화) ] 출력
+	  document.write(today.getFullYear()+"-");
+	  document.write((today.getMonth()+1)+"-");
+	  document.write(today.getDate());
+	  document.write("("+ ( (today.getDay() == 2)? "화":"") +")");
+	  
+	  //요일정보를 계산해주는 함수
+	  // changeDay() - 요일정보(0~6) (일~토)
+	  function changeDay(day){
+		  var chDay = ""; // 변경된 날짜 정보저장 변수 
+		  
+		  switch(day){
+		  case 0:
+			  chDay = "일";
+			  break;
+		  case 1:
+			  chDay ="월";
+			  break;
+		  case 2:
+			  chDay="화";
+			  break;
+		  case 3:
+			  chDay="수";
+			  break;
+		  case 4:
+			  chDay="목";
+			  break;
+		  case 5:
+			  chDay="금";
+			  break;
+		  case 6:
+			  chDay="토";
+			  break;
+			default:
+				chDay="에러";
+		  }
+		  
+		  return chDay;
+	  }
+	
+	  document.write("("+ changeDay(today.getDay()) +")");
+	  
+	  // new Date("년/월/일")  2022/3/8
+	  // new Date(년,월-1,일)  2022/2/8
+	  
+	  // Q. 2002년 5월 31일은 무슨요일?
+			  
+	  // 날짜 객체 생성
+	  var day2002 = new Date("2002/5/31");
+	  
+	  //document.write(day2002);
+	  // 요일정보 변환
+	  // 정보 출력
+	  document.write(" 2002년 5월 31일은 "+changeDay(day2002.getDay())+"요일 입니다.<br>");
+	  
+	  document.write("<hr>");
+	  // 시간정보 출력
+	  
+	  document.write(today.getHours()+"시");
+	  document.write(today.getMinutes()+"분");
+	  document.write(today.getSeconds()+"초<br>");
+	  
+	  // D-day프로그램 만들기
+	  // 2022/12/31까지 남은 일수는?
+			  
+	  document.write(new Date("2022/3/8")-new Date("2022/3/1"));
+	  
+	  document.write("<hr>");
+	  // 날짜 객체 - 날짜객체 = 남은일수 (ms)
+	  
+	  // 1ms -  1/1000 s
+	  // 1s - 1000ms
+	  // 1m - 1000 * 60 ms
+	  // 1h - 1000 * 60 * 60 ms
+	  // 1d - 1000 * 60 * 60 * 24 ms
+	  
+	  
+	  var now = new Date();
+	  var Dday = new Date("2022/12/31");
+	  
+	  document.write( Math.ceil( (Dday - now)/(1000 * 60 * 60 * 24) ));
+	  
+	  
+	  
+	
+	</script>
+</head>
+<body>
+  <h1>/js2/test1.html</h1>
+  
+  
+  
+  
+
+</body>
+</html>

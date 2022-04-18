@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+ 	function fun1(){
+ 		// 아이디 입력창의 정보확인
+ 		alert(' 타입 : '+document.fr.pw.type);
+ 		alert(' 이름 : '+document.fr.pw.name);
+ 		alert(' 값 : '+document.fr.id.value);
+ 		alert(' 값 : '+document.fr.pw.value);
+ 	}
+
+	function funCk(){
+		//alert(document.fr.id.value);
+		if(document.fr.id.value == ""){
+			alert("입력X");
+			document.fr.id.value="아이티윌";
+			//document.fr.id.focus();
+			//document.fr.id.blur();
+			document.fr.id.select();			
+		}else{
+			alert("입력O");
+		}
+		
+	}
+	
+	
+	function check(){
+		// 아이디 입력여부
+		//if(document.fr.id.value == ""){
+		if(document.fr.id.value.length < 1){
+			alert(" 아이디를 입력하세요! ");
+			document.fr.id.focus();
+			return;
+		}
+		// 비밀번호   "
+		if(document.fr.pw.value == ""){
+			alert(" 비밀번호를 입력하세요! ");
+			document.fr.id.focus();
+			return;
+		}
+		var docFr = document.fr;
+		// 주민번호   "
+		if(docFr.ju1.value==""){
+			alert(" 주민번호 앞자리를 입력하세요! ");
+			document.fr.id.focus();
+			return;
+		}
+		if(docFr.ju2.value==""){
+			alert(" 주민번호 뒷자리를 입력하세요! ");
+			document.fr.id.focus();
+			return;
+		}
+		// 메세지     "
+		if(document.fr.msg.value.length < 1){
+			alert(" 메세지를 입력하세요! ");
+			document.fr.id.focus();
+			return;
+		}
+		// 데이터 전송
+		docFr.submit();	
+		
+	}// check()
+	
+	
+	
+	function check2(){
+		// 아이디 입력여부
+		//if(document.fr.id.value == ""){
+		if(document.fr.id.value.length < 1){
+			alert(" 아이디를 입력하세요! ");
+			document.fr.id.focus();
+			return false;
+		}
+		// 비밀번호   "
+		if(document.fr.pw.value == ""){
+			alert(" 비밀번호를 입력하세요! ");
+			document.fr.id.focus();
+			return false;
+		}
+		var docFr = document.fr;
+		// 주민번호   "
+		if(docFr.ju1.value==""){
+			alert(" 주민번호 앞자리를 입력하세요! ");
+			document.fr.id.focus();
+			return false;
+		}
+		if(docFr.ju2.value==""){
+			alert(" 주민번호 뒷자리를 입력하세요! ");
+			document.fr.id.focus();
+			return false;
+		}
+		// 메세지     "
+		if(document.fr.msg.value.length < 1){
+			alert(" 메세지를 입력하세요! ");
+			document.fr.id.focus();
+			return false;
+		}
+		
+	}// check2()
+	
+	
+	function keyFun1(){
+		if(document.fr.ju1.value.length == 6){
+			document.fr.ju2.focus();
+		}
+	}
+ 	
+
+</script>
+</head>
+<body>
+  <h1>js3/test2.html</h1>
+  
+  <fieldset>
+     <legend>폼태그 제목</legend>
+     <form action="itwill.jsp" name="fr" method="get" onsubmit="return check2();">
+     	아이디 : <input type="text" name="id"> <br>
+     	비밀번호 : <input type="password" name="pw"> <br>
+     	주민번호 : <input type="text" name="ju1" maxlength="6" onkeyup="keyFun1();"> 
+     	   - <input type="text" name="ju2"><br>
+     	메세지 : <textarea rows="10" cols="75" name="msg"></textarea>
+     
+        <hr>
+        <input type="submit" value="전송하기"> 
+        <input type="button" value="버튼" onclick=" fun1(); ">  
+        <!-- 아이디 입력여부 체크 -->
+        <input type="button" value="입력값 체크버튼" onclick=" funCk(); ">
+        <hr>  
+        <!-- 모든 요소에 데이터가 입력되어있을때만 전송 기능 -->
+        <input type="button" value="가입하기" onclick=" check(); ">  
+           
+     </form>
+  </fieldset>
+  
+  
+
+</body>
+</html>

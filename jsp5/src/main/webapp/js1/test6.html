@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+	// 변수 : 데이터 값을 저장하는 공간	
+	// 함수(function) : 실행문을 저장하는 공간
+	
+	//1) 함수 정의
+	// 	function 함수명(){
+	// 		실행문;
+	// 		실행문;
+	// 	    .....
+	// 	}
+	
+	//[익명함수]
+	// 	var 변수 = function(){
+	// 	 (참조변수) 실행문;
+	// 				실행문;
+	// 				}
+	
+	
+	//2) 함수 사용
+	// 함수명();
+	
+	// [익명함수 사용]
+	// 변수명();
+	
+	//alert('msg');
+	
+	// "안녕하세요" 출력하는 Hello() 생성해서 호출
+	
+	function Hello(){
+		document.write("안녕하세요@<br>");
+	}
+	Hello();
+	
+	
+// 	function 함수명(매개변수1,매개변수2,.....){
+// 		실행문;
+// 	}
+
+//   함수명(값1,값2,.....);
+
+	function showMyInfo(name,tel){
+		document.write("이름 : "+name);
+		document.write(",전화번호 : "+tel+"<br>");
+	}
+	
+	
+	//showMyInfo();
+	showMyInfo("홍길동","010-4567-7894");
+
+	showMyInfo("김학생","010-1234-1032");
+	
+	
+	// 로그인을 처리하는 함수 MyLogin()
+	
+	function MyLogin(id,pass){
+		var userID = "admin";
+		var userPASS = "1234";
+		
+		if(id == userID){
+			if(pass == userPASS){
+				alert("로그인 성공!");
+			}else{
+			    alert("비밀번호 오류입니다.");	
+			}			
+		}else{
+			alert("비회원 입니다.");
+		}		
+	}
+	
+	
+	MyLogin("itwill", "1234");
+	
+	MyLogin("admin","1234");
+	
+// 	function 함수명(매개변수){
+// 		실행문;
+		
+// 		return 데이터값;
+// 	}
+	
+// 	var 변수 = 함수명(값);
+	// prompt();
+	
+	// 함수의 존재목적
+	// 1) 모든 코드의 실행
+	// 2) return의 실행
+
+// 	function 함수명(){
+		 
+// 		return; // 함수 종료
+// 	}
+	
+	// 변수 3개를 전달받아서 변수의 합을 계산하는 mySum() 생성
+	// 이때, 함수의 결과를 리턴받아서 출력
+	
+	function mySum(num1,num2,num3){
+		var result = num1+num2+num3;
+		return result;
+		//return num1+num2+num3;
+	}
+	
+	var result = mySum(10,20,30);
+	alert("결과 : "+result);
+	
+	
+	
+	// 지역변수 : 특정 영역(블럭)안에서만 사용가능한 변수
+	// 전역변수 : 영역상관없이 모든곳에서 사용가능한 변수
+	
+// 		var val;//전역변수
+// 		function fnc(){
+// 			var val;//지역변수
+// 		}
+	
+	var num = 200;
+	
+	function fnc(){
+		document.write("fnc-num : "+num+"<br>");
+		var num = 500;
+		document.write("fnc-num : "+num+"<br>");		
+	}
+	
+	document.write(num+"<br>"); //? - 200
+	
+	fnc();
+	
+	document.write(num+"<br>"); //? - 
+			
+	
+
+	
+	
+	
+	
+	
+	
+		
+		
+	</script>
+</head>
+<body>
+	<h1>test6.html</h1>
+	
+	<button onclick="Hello();">함수 실행하기</button>
+	
+</body>
+</html>

@@ -1,0 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%
+	//color.jspf
+
+	String col1 = "yellow";
+	String col2 = "pink";
+	String col3 = "orange";
+	String col4 = "green";
+	
+%>
