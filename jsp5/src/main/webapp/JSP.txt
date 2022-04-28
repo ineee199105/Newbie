@@ -386,7 +386,16 @@ JSP.txt
  p305
  http://www.servlets.com/
  
- 
+ // 파일업로드 객체
+ MultipartRequest multi 
+	         = new MultipartRequest(
+	        		 request 내장객체 (파라메터,파일정보),
+	        		 업로드 위치(가상경로),
+	        		 업로드 파일의 크기,
+	        		 업로드시 인코딩처리,
+	        		 중복된 파일이름 업로드시 처리객체
+	        		 );
+	  
   
   
   

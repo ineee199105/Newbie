@@ -14,6 +14,7 @@
   <h2> 게시판 글 목록 </h2>
   
   <h3><a href="writeForm.jsp"> 글쓰기 </a></h3>	
+  <h3><a href="fWriteForm.jsp"> 파일 글쓰기 </a></h3>	
   
   <%
     // DAO 객체 생성

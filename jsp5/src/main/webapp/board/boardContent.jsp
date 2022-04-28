@@ -47,10 +47,16 @@
         <td>글 제목</td>
         <td colspan="3"><%=bb.getSubject() %></td>
      </tr>
+     
+     <%if(bb.getFile() != null){ %>
      <tr>
         <td>첨부파일</td>
-        <td colspan="3">첨부파일</td>
+        <td colspan="3">
+        	<a href="../upload/<%=bb.getFile() %>"><%=bb.getFile() %></a><br>
+        	<a href="../fileUpload/fileDown.jsp?fileName=<%=bb.getFile() %>"><%=bb.getFile() %></a><br>
+        </td>
      </tr>
+     <%} %>
      <tr>
         <td>글 내용</td>
         <td colspan="3"><%=bb.getContent() %></td>
