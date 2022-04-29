@@ -3,7 +3,7 @@ class Car2 {
 	String gearType;
 	int door;
 	
-	Car2() {
+ 	Car2() {
 		this("white", "auto", 4);
 	}
 	
