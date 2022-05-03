@@ -122,3 +122,6 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,windows,eclipse
 /SQL 스크립트 파일/
+
+./Servers/**
+./.project
