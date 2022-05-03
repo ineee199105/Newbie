@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+   
+   //location.href="string1.jsp";
+   
+   $(document).ready(function(){
+	   
+	   $.ajax('string1.jsp',{
+		   success:function(data){
+			   alert("페이지 다녀옴!");
+			   //alert(data);
+			   
+			   $('body').append(data);
+			   
+		   }
+	   });
+	   
+   });
+
+</script>
+
+</head>
+<body>
+    <h1>ajaxString1.html</h1>
+   
+   
+   
+</body>
+</html>

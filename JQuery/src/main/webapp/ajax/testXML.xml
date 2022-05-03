@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<people>
+	<person>
+		<name>김학생</name>
+		<gender>남자</gender>
+		<tel>010-1234-6534</tel>
+	</person>
+	<person>
+		<name>이학생</name>
+		<gender>여자</gender>
+		<tel>010-9874-6624</tel>
+	</person>
+	<person>
+		<name>박학생</name>
+		<gender>남자</gender>
+		<tel>010-0494-1987</tel>
+	</person>
+</people>
+
+

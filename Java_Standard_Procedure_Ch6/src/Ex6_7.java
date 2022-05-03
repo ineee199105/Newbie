@@ -11,8 +11,6 @@ public class Ex6_7 {
 		change(d);
 		System.out.println("After change(d)");
 		System.out.println("main() : x = " + d.x);
-		
-		System.out.println(d);
 	}
 	
 	static void change(Data2 d) {

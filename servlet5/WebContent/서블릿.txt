@@ -1,0 +1,63 @@
+JAVA EE (Enterprise Edition) - JSP/Servlet
+
+JSP? Java로 만들어진 동적컨텐츠를 처리하기위한 기술
+(Java Server Page)
+   JSP2.3/Servelt3.1 => Tomcat 8
+   
+  JSP - Servlet
+  => JSP코드 실행 -> 톰켓(컨테이너) -> Servlet변경
+     .jsp  ->   ................ -> .java -> .class
+     
+     
+  * 서블릿 규칙
+  1) javax.servlet.Servlet 인터페이스를 구현해야함
+  2) 1)을 구현하기 힘든경우 javax.servlet.http.HttpServlet 클래스를 상속한다
+  3) doGet()/doPost() 메서드를 구현 - 오버라이딩해야함.
+     [ 전달인자로 javax.servelt.http.HttpServletRequest,
+                  javax.servelt.http.HttpServletResponse 를 구현해야함]
+  4) java.io.IOException/javax.serlvet.ServletException 을 처리해야함.
+  5) 배포서술자(web.xml)을 사용하여 서블릿 주소 매핑해야함 (서블릿3.0 이상 권장)
+  
+    
+  <servlet>
+      <servlet-name>그때 실행되는 서블릿이름</servlet-name>
+      <servlet-class>서블릿의 실제 파일의 위치</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>그때 실행되는 서블릿이름</servlet-name>
+      <url-pattern>매핑되는 주소</url-pattern>
+  </servlet-mapping> 
+  
+      ||
+      
+   @WebServlet("매핑주소")   //서블릿 버전에 따른 적용여부 (3.0 이상만 사용가능)
+  
+  
+  
+  * 상대경로 
+  
+     ./ ~~~~ .jsp   : ./ == WebContent 폴더를 의미
+     ./ ~~~~~~~	    : ./ == 프로젝트명을 의미
+     
+     ../ : 상위폴더로 이동
+     / : 최상위경로
+     
+  
+  
+  * JSP -> Servlet 변경 규칙
+  1) JSP - 스크립틀릿 <% %> => Servlet - service()안에 구현
+  2) JSP - 표현식 <%= %> => Servlet - service()안에  out.println();으로 표현
+  3) JSP - 선언식 <%! %> => Servlet - 멤버변수/메서드
+  4) JSP - HTML코드 => Servlet - service()안에 out.write();으로 표현
+  
+  
+  
+  
+  
+  
+  
+  
+  
+     
+     

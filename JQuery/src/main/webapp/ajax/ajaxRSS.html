@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+// 	  $.ajax({
+// //		 url : 	"http://www.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=159",
+// 		 url : "test.xml",
+// 		 success: function(data){
+// 			alert("rss 데이터 가져오기 성공!"); 
+			
+// 			$(data).find('location').each(function(){
+// 				var title = $(this).find('city').text();
+// 				alert(title);
+// 			});
+			
+// 		 }	 
+// 	  });  
+  
+      //jtbc - 뉴스RSS
+      $.ajax({
+    	  url : "https://fs.jtbc.joins.com//RSS/sports.xml",
+    	  success: function(data){
+    		  alert(" JTBC 접근 완료 ");
+    		  
+    		  // 뉴스 기사를 화면에 출력 + 기사클릭시 링크로 이동
+    		  $(data).find('item').each(function(){
+    			  
+    			  var title = $(this).find('title').text();
+    			  var link = $(this).find('link').text();
+    			  
+    			  $('body').append("<a href='"+link+"'>"+title+"</a><br><br>");
+    			  
+    		  });
+    		  
+    		  
+    	  }
+      });
+
+
+
+
+  });
+
+</script>
+
+
+</head>
+<body>
+    <H1>ajaxRSS.html</H1>
+</body>
+</html>

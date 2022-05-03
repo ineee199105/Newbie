@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+	  
+	   $.getJSON("dbJSON.jsp",function(data){
+		   $.each(data,function(index,item){
+			   $('table').append("<tr><td>"+item.id+"</td><td>"+item.pw+"</td><td>"+item.name+"</td><td>"+item.gender+"</td><td>"+item.age+"</td><td>"+item.email+"</td><td>"+item.reg_date+"</td></tr>");
+		   });
+	   });
+	   
+// 	   $.ajax({
+// 		  url : "dbJSON.jsp",
+// 		  success:function(data){
+// 			  alert("data");
+// 		  },
+// 		  error:function(data){
+// 			  alert(data);
+// 			  console.log(data);
+// 		  }
+// 	   });
+	   
+	   
+	   
+   });
+
+</script>
+</head>
+<body>
+   <h1>ajaxJSONDB.html</h1>
+   
+   <table border="1">
+      <tr>
+        <td>아이디</td>
+        <td>비밀번호</td>
+        <td>이름</td>
+        <td>나이</td>
+        <td>성별</td>
+        <td>이메일</td>
+        <td>회원가입일</td>
+      </tr>
+   </table>
+
+</body>
+</html>

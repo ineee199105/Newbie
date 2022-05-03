@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+   $(function(){
+	   
+	   $.ajax({
+		   url : "test1.jsp",
+		   success: function(data){
+			   // alert(" json 처리완료! ");
+			   console.log(data);
+			   alert(data);
+			   
+			   $('body').append(data.name+"/"+data.gender+"/"+data.tel+"<br>");
+		   }		   
+	   });// ajax
+	   
+	   
+	   //.getJSON();
+	   $.getJSON({
+		   url:"test1.jsp",
+		   success:function(data){
+			   $.each(data,function(k,v){
+				    $('body').append(k+ " : "+v+"<br>");
+			   });
+		   }		   
+	   });	// getJSON
+	   
+	   // json 배열처리 -> body에 출력 
+	   $.getJSON("test2.jsp",function(data){
+		   
+		   $.each(data,function(index,item){
+			   //alert(index+" / "+item);
+			   $('body').append("<hr>");
+			   $('body').append(item.name+"/"+item.tel+"/"+item.gender);
+			   
+			   var tag = "<tr>";
+			       tag += "<td>"+item.name+"</td>";
+			       tag += "<td>"+item.gender+"</td>";
+			       tag += "<td>"+item.tel+"</td>";
+			       tag += "</tr>";
+			   
+			   $('table').append(tag);
+			   
+			   
+		   });		   
+		   
+	   });
+	   
+	   
+	  
+	   
+   });// jquery
+</script>
+
+</head>
+<body>
+   <h1>ajaxJSON.html</h1>
+   
+   <table border="1">
+      <tr>
+        <td>이름</td>
+        <td>성별</td>
+        <td>전화번호</td>
+      </tr>
+   </table>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+</body>
+</html>
