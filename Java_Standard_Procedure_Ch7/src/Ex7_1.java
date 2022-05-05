@@ -23,7 +23,7 @@ public class Ex7_1 {
 		SmartTv stv = new SmartTv();
 		stv.channel = 10;
 		stv.channelUP();
-		System.out.println(stv.channel);
+		System.out.println(stv.channel);// 기본형타입 메소드 vs 참조형타입 메소드
 		stv.displayCaption("Hello, World");
 		stv.caption = true;
 		stv.displayCaption("Hello, World");

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class SessionLoginServlet
  */
-@WebServlet("/SessionLoginServlet")
+@WebServlet("/sessionLogin")
 public class SessionLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,6 +34,8 @@ public class SessionLoginServlet extends HttpServlet {
 		request.setCharacterEncoding("euc-kr");
 		response.setContentType("text/html;charset=euc-kr");
 		PrintWriter out = response.getWriter();
+		//PrintWriter클래스를 이용하여 out이 참조하는(가리키는) 객체가 생성되고
+		//getWriter(); 메소드의 출력이 HttpServletResopnse클래스의 response객체에 저장됨.
 		String id = request.getParameter("id");
 		String passwd = request.getParameter("passwd");
 		if(id.equals("java")&&passwd.equals("java")) {
@@ -47,7 +49,6 @@ public class SessionLoginServlet extends HttpServlet {
 			out.println("alert('아이디나 비밀번호가 일치하지 않습니다.')");
 			out.println("history.back()");
 			out.println("</script>");
-					
 		}
 	}
 

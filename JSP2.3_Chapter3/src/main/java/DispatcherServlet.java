@@ -1,6 +1,8 @@
-package com.itwillbs.test;
+
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,19 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Test
+ * Servlet implementation class DispatcherServlet
  */
-
-//http://localhost:8088/servlet5/Test
-
-@WebServlet("/Test")
-public class Test extends HttpServlet {
+@WebServlet("/dispatcher")
+public class DispatcherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Test() {
+    public DispatcherServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,15 +29,9 @@ public class Test extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		RequestDispatcher dispatcer = request.getRequestDispatcher("dispatcher.jsp");
+		request.setAttribute("request", "requestValue");
+		dispatcer.forward(request, response);
 	}
 
 }

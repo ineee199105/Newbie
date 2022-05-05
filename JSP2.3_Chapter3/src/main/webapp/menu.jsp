@@ -13,7 +13,7 @@
 <%
 	if(id == null){
 %>
-<a href="login.jsp">로그인</a>
+<a href="login.jsp">로그인</a> <!--16열이 HTML상 보이는 구현부 -->
 <%
 	}
 	else{
