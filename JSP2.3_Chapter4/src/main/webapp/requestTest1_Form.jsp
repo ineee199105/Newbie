@@ -22,9 +22,9 @@ table {
 	<form action="requestTest1.jsp" method="post">
 		<table>
 		<tr> 
-			<td><label for = "name">이름</label></td>
+			<td><label for = "name">이름</label></td> <!-- td=Table Data  -->
 			<td><input type="text" name="name" id= "name"></td>
-		</tr> 
+		</tr> <!-- tr=Table Row -->
 		<tr>
 			<td><label for = "gender">성별</label></td>
 			<td>남<input type ="radio" name ="gender" value= "male" id= "gender">
@@ -34,7 +34,7 @@ table {
 			<td><label for="hobby">취미</label></td>
 			<td>
 			독서<input type="checkbox" name="hobby" value="독서" id="hobby">
-			게임<input type="checkbox" name="hobby" value="독서" id="hobby">
+			게임<input type="checkbox" name="hobby" value="게임" id="hobby">
 			TV시청<input type="checkbox" name="hobby" value="TV시청" id="hobby">
 			축구<input type="checkbox" name="hobby" value="축구" id="hobby">
 			기타<input type="checkbox" name="hobby" value="기타" id="hobby">
