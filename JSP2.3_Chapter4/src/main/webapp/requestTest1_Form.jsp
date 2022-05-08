@@ -28,6 +28,21 @@ table {
 		<tr>
 			<td><label for = "gender">성별</label></td>
 			<td>남<input type ="radio" name ="gender" value= "male" id= "gender">
+			여<input type ="radio" name ="gender" value= "female"></td>
+		</tr>
+		<tr>
+			<td><label for="hobby">취미</label></td>
+			<td>
+			독서<input type="checkbox" name="hobby" value="독서" id="hobby">
+			게임<input type="checkbox" name="hobby" value="독서" id="hobby">
+			TV시청<input type="checkbox" name="hobby" value="TV시청" id="hobby">
+			축구<input type="checkbox" name="hobby" value="축구" id="hobby">
+			기타<input type="checkbox" name="hobby" value="기타" id="hobby">
+			</td>
+		</tr>
+		<tr>
+		<td colspan="2" id = "commandCell"><input type="submit" value="전송"></td>
+		</tr>
 		</table>
 	</form>
 </body>
