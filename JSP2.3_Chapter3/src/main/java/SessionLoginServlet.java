@@ -33,7 +33,9 @@ public class SessionLoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("euc-kr");
 		response.setContentType("text/html;charset=euc-kr");
+		
 		PrintWriter out = response.getWriter();
+		
 		//PrintWriter클래스를 이용하여 out이 참조하는(가리키는) 객체가 생성되고
 		//getWriter(); 메소드의 출력이 HttpServletResopnse클래스의 response객체에 저장됨.
 		String id = request.getParameter("id");
