@@ -2,7 +2,7 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,9 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <h1> UpdatePro.jsp </h1>
-  <!-- 입력된 정보를 화면에 출력(id/pw , 수정할정보 name,age,gender) -->
-  <%
+	<h1>UpdatePro.jsp</h1>
+	<!-- 입력된 정보를 화면에 출력(id/pw , 수정할정보 name,age,gender) -->
+	<%
      // 한글처리
      request.setCharacterEncoding("UTF-8");
   
@@ -22,16 +22,30 @@
 	 int	uAge = Integer.parseInt(request.getParameter("uAge"));
 	 String uGender = request.getParameter("uGender");
   %>
-    <h3>아이디 : <%=id %> </h3>
-    <h3>비밀번호 : <%=pw %> </h3>
-    <h3>수정할 이름 : <%=uName %> </h3>
-    <h3>수정할 나이 : <%=uAge %></h3>
-    <h3>수정할 성별 : <%=uGender %> </h3>
-    
-    <hr>
-    
-    <h2> DB연결후 정보 수정 </h2>
-    <%
+	<h3>
+		아이디 :
+		<%=id %>
+	</h3>
+	<h3>
+		비밀번호 :
+		<%=pw %>
+	</h3>
+	<h3>
+		수정할 이름 :
+		<%=uName %>
+	</h3>
+	<h3>
+		수정할 나이 :
+		<%=uAge %></h3>
+	<h3>
+		수정할 성별 :
+		<%=uGender %>
+	</h3>
+
+	<hr>
+
+	<h2>DB연결후 정보 수정</h2>
+	<%
 	   String DRIVER = "com.mysql.cj.jdbc.Driver";
 	   String DBURL = "jdbc:mysql://localhost:3306/jspdb";
 	   String DBID = "root";
@@ -64,8 +78,8 @@
       out.print("정보 수정완료! <br> ");
     
     %>
-    
-  
+
+
 
 </body>
 </html>

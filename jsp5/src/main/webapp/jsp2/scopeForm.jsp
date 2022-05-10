@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <h1>scopeForm.jsp</h1>
-   <%
+	<h1>scopeForm.jsp</h1>
+	<%
      // * 데이터를 공유하는 범위(공간) => Scope
      // * 공유되는 데이터 (속성) => Attribute
    
@@ -26,21 +26,21 @@
      // [영역객체].getAttribute("이름");
    
    %>
-   
-   
-   <form action="scopePro.jsp" method="get">
-    아이디 : <input type="text" name="id"><br> 
-    <input type="submit" value="전송">
-   </form>
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+
+
+	<form action="scopePro.jsp" method="get">
+		아이디 : <input type="text" name="id"><br> <input
+			type="submit" value="전송">
+	</form>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
- <script type="text/javascript">
+<script type="text/javascript">
    function setPopUp(obj){
 	   //alert("실행!");
 	   if(obj.checked == true){
@@ -29,11 +29,13 @@
  </script>
 </head>
 <body>
-   <h1>popUp.jsp</h1>
-   
-   <img src="js.png"><br>
-   
-   <input type="checkbox" onclick=" setPopUp(this); " > 오늘 더 이상 팝업창 띄우지 않기   
-   
+	<h1>popUp.jsp</h1>
+
+	<img src="js.png">
+	<br>
+
+	<input type="checkbox" onclick=" setPopUp(this); "> 오늘 더 이상
+	팝업창 띄우지 않기
+
 </body>
 </html>

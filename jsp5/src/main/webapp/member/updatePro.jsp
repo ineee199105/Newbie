@@ -16,8 +16,8 @@
 
 		// 전달되는 정보를 저장 (수정할 정보) - 액션태그
 	%>
-	 <jsp:useBean id="updateBean" class="com.itwillbs.member.MemberBean" />
-	 <jsp:setProperty property="*" name="updateBean"/>
+	<jsp:useBean id="updateBean" class="com.itwillbs.member.MemberBean" />
+	<jsp:setProperty property="*" name="updateBean" />
 	<%
 	    System.out.println("수정할 정보 : "+updateBean);
 		// DAO 객체 생성
@@ -28,25 +28,25 @@
 		
 		if(result == -1){ // 아이디없음
 			%>
-			  <script type="text/javascript">
+	<script type="text/javascript">
 			     alert(" 회원정보가 없음! ");
 			     history.back();
-			  </script>			
-			<%
+			  </script>
+	<%
 		}else if(result == 0){ // 비밀번호없음
 			%>
-			  <script type="text/javascript">
+	<script type="text/javascript">
 			     alert(" 비밀번호 오류! ");
 			     history.back();
-			  </script>			
-			<%			
+			  </script>
+	<%			
 		}else{ // result == 1 // 수정완료
 			%>
-			  <script type="text/javascript">
+	<script type="text/javascript">
 			     alert(" 수정완료! ");
 			     location.href="main.jsp";
 			  </script>
-			<%
+	<%
 		}
 	%>
 

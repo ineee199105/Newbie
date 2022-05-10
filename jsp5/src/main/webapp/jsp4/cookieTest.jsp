@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <!-- 
+	<!-- 
       [서버]
       1) 쿠키 객체 생성 (쿠키명,값)
       2) 쿠키에 필요한 설정 => 유효시간,설정,도메인,path,보안....
@@ -22,11 +22,11 @@
    C:\\Users\\ITWILL\\AppData\\Local\\Google\\Chrome
      \\User Data\\Default\\Cache\\Cache_Data
     -->
-   
-   <h1>cookieTest.jsp</h1>
-   
-   <h2> 클라이언트 </h2>
-   <%
+
+	<h1>cookieTest.jsp</h1>
+
+	<h2>클라이언트</h2>
+	<%
      // 쿠키정보를 가져온다.
      Cookie[] cookies = request.getCookies();
    
@@ -48,21 +48,28 @@
      }
    
    %>
-   
-   <hr>
-   
-   <h2> 쿠키명 : <%=cName %> </h2>
-   <h2> 쿠키값 : <%=cValue %></h2>
-   
-   <input type="button" value="쿠키값 생성" onclick=" location.href='cookieSet.jsp'; ">
-   
-   <input type="button" value="쿠키값 삭제" onclick=" location.href='cookieDel.jsp'; ">
-   
-   
-   
-   
-   
-   
+
+	<hr>
+
+	<h2>
+		쿠키명 :
+		<%=cName %>
+	</h2>
+	<h2>
+		쿠키값 :
+		<%=cValue %></h2>
+
+	<input type="button" value="쿠키값 생성"
+		onclick=" location.href='cookieSet.jsp'; ">
+
+	<input type="button" value="쿠키값 삭제"
+		onclick=" location.href='cookieDel.jsp'; ">
+
+
+
+
+
+
 
 </body>
 </html>

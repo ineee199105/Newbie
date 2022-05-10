@@ -1,7 +1,7 @@
 <%@page import="java.net.URLEncoder"%>
 <%@page import="java.io.FileInputStream"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,11 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <h1>fileDown.jsp</h1>
-    
-    <h2> 파일 다운로드 </h2>
-    
-    <%
+	<h1>fileDown.jsp</h1>
+
+	<h2>파일 다운로드</h2>
+
+	<%
       // 다운로드할 파일명
       String fileName = request.getParameter("fileName");
     
@@ -103,11 +103,11 @@
       out2.close();
       fis.close(); 
     %>
-    
-    <%-- <%=fileName %> --%>
-    
-    
-    
-    
+
+	<%-- <%=fileName %> --%>
+
+
+
+
 </body>
 </html>

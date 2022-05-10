@@ -29,18 +29,18 @@
 
 		// 회원정보를 모두 출력
 	%>
-    <table border="1">
-       <tr>
-           <td>아이디</td>
-           <td>비밀번호</td>
-           <td>이름</td>
-           <td>나이</td>
-           <td>성별</td>
-           <td>이메일</td>
-           <td>회원가입일</td>
-       </tr>
-       
-       <% for(int i=0;i<memberList.size();i++){
+	<table border="1">
+		<tr>
+			<td>아이디</td>
+			<td>비밀번호</td>
+			<td>이름</td>
+			<td>나이</td>
+			<td>성별</td>
+			<td>이메일</td>
+			<td>회원가입일</td>
+		</tr>
+
+		<% for(int i=0;i<memberList.size();i++){
     	       // 리스트 한칸의 데이터를 MemberBean형태로 형변환
     	   		MemberBean mb = (MemberBean) memberList.get(i);
     	       
@@ -49,18 +49,18 @@
     	    	    continue;
     	       }
     	   %>
-        <tr>
-           <td><%=mb.getId() %></td>
-           <td><%=mb.getPw() %></td>
-           <td><%=mb.getName() %></td>
-           <td><%=mb.getAge() %></td>
-           <td><%=mb.getGender() %></td>
-           <td><%=mb.getEmail() %></td>
-           <td><%=mb.getReg_date() %></td>
-        </tr>
-       <%} %>
-    
-    </table>
+		<tr>
+			<td><%=mb.getId() %></td>
+			<td><%=mb.getPw() %></td>
+			<td><%=mb.getName() %></td>
+			<td><%=mb.getAge() %></td>
+			<td><%=mb.getGender() %></td>
+			<td><%=mb.getEmail() %></td>
+			<td><%=mb.getReg_date() %></td>
+		</tr>
+		<%} %>
+
+	</table>
 
 
 

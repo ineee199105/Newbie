@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-  <script type="text/javascript">
+<script type="text/javascript">
       function fun1(){
     	  // 라디오버튼,체크박스 객체/속성
     	  // alert(document.fr.gender[1].value);
@@ -55,45 +55,40 @@
   </script>
 </head>
 <body>
-  <h1>test3.html</h1>
-  
-  <fieldset>
-     <form action="itwill.jsp" name="fr" method="get">
-     
-       성별 : 
-        <input type="radio" name="gender" value="남" > 남
-        <input type="radio" name="gender" value="여" > 여<br>
-       
-       취미 :
-        <input type="checkbox" name="hobby" value="게임"> 게임
-        <input type="checkbox" name="hobby" value="요리"> 요리
-        <input type="checkbox" name="hobby" value="영화"> 영화<br>
-        
-        강의장 : 
-        <select name="number" >  <!-- size="3" multiple="multiple" -->
-          <option value="">강의장을 선택하세요</option>
-          <option value="1">1강의장</option>
-          <option value="2">2강의장</option>
-          <option value="3">3강의장</option>
-          <option value="4">4강의장</option>
-          <option value="5">5강의장</option>
-        </select>
-        
-        <hr>
-        <input type="submit" value="전송하기">
-        
-        <input type="button" value="속성 확인하기" onclick=" fun1(); ">
-        
-        <hr>
-        
-        <input type="button" value="정보 체크후 전달하기"  onclick=" check(); " >
-        
-        
-       
-     </form>  
-  </fieldset>
-  
-  
+	<h1>test3.html</h1>
+
+	<fieldset>
+		<form action="itwill.jsp" name="fr" method="get">
+
+			성별 : <input type="radio" name="gender" value="남"> 남 <input
+				type="radio" name="gender" value="여"> 여<br> 취미 : <input
+				type="checkbox" name="hobby" value="게임"> 게임 <input
+				type="checkbox" name="hobby" value="요리"> 요리 <input
+				type="checkbox" name="hobby" value="영화"> 영화<br> 강의장 : <select
+				name="number">
+				<!-- size="3" multiple="multiple" -->
+				<option value="">강의장을 선택하세요</option>
+				<option value="1">1강의장</option>
+				<option value="2">2강의장</option>
+				<option value="3">3강의장</option>
+				<option value="4">4강의장</option>
+				<option value="5">5강의장</option>
+			</select>
+
+			<hr>
+			<input type="submit" value="전송하기"> <input type="button"
+				value="속성 확인하기" onclick=" fun1(); ">
+
+			<hr>
+
+			<input type="button" value="정보 체크후 전달하기" onclick=" check(); ">
+
+
+
+		</form>
+	</fieldset>
+
+
 
 </body>
 </html>

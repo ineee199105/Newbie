@@ -2,7 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.itwillbs.board.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,13 +10,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <h1>boardList.jsp</h1>
-  <h2> 게시판 글 목록 </h2>
-  
-  <h3><a href="writeForm.jsp"> 글쓰기 </a></h3>	
-  <h3><a href="fWriteForm.jsp"> 파일 글쓰기 </a></h3>	
-  
-  <%
+	<h1>boardList.jsp</h1>
+	<h2>게시판 글 목록</h2>
+
+	<h3>
+		<a href="writeForm.jsp"> 글쓰기 </a>
+	</h3>
+	<h3>
+		<a href="fWriteForm.jsp"> 파일 글쓰기 </a>
+	</h3>
+
+	<%
     // DAO 객체 생성
     BoardDAO dao = new BoardDAO();
     // 저장되어있는 글이 있는지 체크
@@ -50,48 +54,46 @@
     	//System.out.println(boardList);
     }
   %>
-  
-  <table border="1">
-     <tr>
-       <th>번호</th>
-       <th>제목</th>
-       <th>작성자</th>
-       <th>작성일</th>
-       <th>조회수</th>
-       <th>ip</th>
-     </tr>
-     
-     <%
+
+	<table border="1">
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>작성일</th>
+			<th>조회수</th>
+			<th>ip</th>
+		</tr>
+
+		<%
       if( boardList != null ){
        for(int i=0;i<boardList.size();i++){ 
 	       BoardBean bb = (BoardBean)boardList.get(i);
         %>
-	     <tr>
-	       <td><%=bb.getNum() %></td>
-	       
-	       <td>
-	         <%if(bb.getRe_lev()>0){ %>
-	            <img src="level.gif" width="<%=bb.getRe_lev()*10%>">
-	         	<img src="re.gif">
-	         <%} %>
-	         <a href="boardContent.jsp?num=<%=bb.getNum()%>&pageNum=<%=pageNum%>">
-	         	<%=bb.getSubject() %>
-	         </a>
-	       </td>
-	       
-	       <td><%=bb.getName() %></td>
-	       <td><%=bb.getDate() %></td>
-	       <td><%=bb.getReadcount() %></td>
-	       <td><%=bb.getIp() %></td>
-	     </tr>
-     <% 
+		<tr>
+			<td><%=bb.getNum() %></td>
+
+			<td>
+				<%if(bb.getRe_lev()>0){ %> <img src="level.gif"
+				width="<%=bb.getRe_lev()*10%>"> <img src="re.gif"> <%} %>
+				<a href="boardContent.jsp?num=<%=bb.getNum()%>&pageNum=<%=pageNum%>">
+					<%=bb.getSubject() %>
+			</a>
+			</td>
+
+			<td><%=bb.getName() %></td>
+			<td><%=bb.getDate() %></td>
+			<td><%=bb.getReadcount() %></td>
+			<td><%=bb.getIp() %></td>
+		</tr>
+		<% 
          }
        }
      %>
-  
-  </table>
-  
-  <%
+
+	</table>
+
+	<%
     // 페이징 2
     if(cnt != 0){ // 게시판글이 있을때
     	
@@ -114,32 +116,33 @@
     	// 이전
     	if(startPage > pageBlock){
     		%>
-    		   <a href="boardList.jsp?pageNum=<%=startPage-pageBlock%>">[이전]</a>
-    		<%
+	<a href="boardList.jsp?pageNum=<%=startPage-pageBlock%>">[이전]</a>
+	<%
     	}
     	//  1 2 3 4 ... 10   11 12 13.... 20 
     	for(int i=startPage;i<=endPage;i++){
     		   %>
-    		       <a href="boardList.jsp?pageNum=<%=i%>">[<%=i %>]</a>      		   
-    		   <% 		
+	<a href="boardList.jsp?pageNum=<%=i%>">[<%=i %>]
+	</a>
+	<% 		
     	}
     		
     	// 다음
     	if(endPage < pageCount){
     		%>
-    		    <a href="boardList.jsp?pageNum=<%=startPage+pageBlock%>">[다음]</a>
-    		<%
+	<a href="boardList.jsp?pageNum=<%=startPage+pageBlock%>">[다음]</a>
+	<%
     	}
     	
     }
   
   %>
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
 </body>
 </html>

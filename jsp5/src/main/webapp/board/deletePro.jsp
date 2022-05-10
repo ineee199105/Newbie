@@ -1,6 +1,6 @@
 <%@page import="com.itwillbs.board.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <h1>deletePro.jsp</h1>
-   
-   <%
+	<h1>deletePro.jsp</h1>
+
+	<%
       // 한글처리 (파라메터를 저장하기전)
       request.setCharacterEncoding("UTF-8");
       
@@ -31,30 +31,30 @@
       // 수정완료 -1 : 실제 수정X 페이지 뒤로가기
       if(result == 1){
     	  %>
-    	    <script type="text/javascript">
+	<script type="text/javascript">
     	       alert('게시글 삭제완료!');
     	       location.href='boardList.jsp?pageNum=<%=pageNum%>';
     	    </script>
-    	  <%
+	<%
       }else if(result == 0){
     	  %>
-    	    <script type="text/javascript">
+	<script type="text/javascript">
     	        alert("글 비밀번호 오류!(삭제x)");
     	        history.back();
-    	    </script>    	  
-    	  <%    	  
+    	    </script>
+	<%    	  
       }else{ //result == -1
     	  %>
-	  	    <script type="text/javascript">
+	<script type="text/javascript">
 	  	        alert("글 없음 오류!(삭제x)");
 	  	        history.back();
-	  	    </script>    	  
-	  	  <% 
+	  	    </script>
+	<% 
       }
    
    
    %>
-   
-   
+
+
 </body>
 </html>

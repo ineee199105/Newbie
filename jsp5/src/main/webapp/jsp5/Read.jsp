@@ -4,7 +4,7 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.DriverManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,10 +12,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <h1>Read.jsp</h1>
-    <h2> DB에 저장해놓은 계정정보 하나를 가져와서 출력 </h2>
-    
-    <%
+	<h1>Read.jsp</h1>
+	<h2>DB에 저장해놓은 계정정보 하나를 가져와서 출력</h2>
+
+	<%
       String DRIVER = "com.mysql.cj.jdbc.Driver";
       String DBURL = "jdbc:mysql://localhost:3306/jspdb";
       String DBID = "root";
@@ -69,17 +69,17 @@
     
     
     %>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

@@ -11,24 +11,23 @@
 
 	<h2>로그인</h2>
 
-		<form action="loginPro.jsp" method="post">
-		  <table border="1">
-		     <tr>
-		        <td>아이디 :</td>
-		        <td><input type="text" name="id"></td>
-		      	<td rowspan="2">
-					<input type="submit" value="로그인">
-				</td>
-		     </tr>
-		    <tr>
-		        <td>비밀번호 :</td>
-		        <td><input type="password" name="pw"></td>
-		     </tr>
-		  </table>
-		</form>
-		<hr>
-		
-		<input type="button" value="회원가입" onclick=" location.href='insertForm.jsp'; ">
+	<form action="loginPro.jsp" method="post">
+		<table border="1">
+			<tr>
+				<td>아이디 :</td>
+				<td><input type="text" name="id"></td>
+				<td rowspan="2"><input type="submit" value="로그인"></td>
+			</tr>
+			<tr>
+				<td>비밀번호 :</td>
+				<td><input type="password" name="pw"></td>
+			</tr>
+		</table>
+	</form>
+	<hr>
+
+	<input type="button" value="회원가입"
+		onclick=" location.href='insertForm.jsp'; ">
 
 
 

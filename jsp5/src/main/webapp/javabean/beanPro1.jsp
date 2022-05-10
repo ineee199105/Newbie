@@ -12,9 +12,10 @@
 	<%
 		String id = request.getParameter("id");		
 	%>
-	아이디 : <%=id %><br>
+	아이디 :
+	<%=id %><br>
 	<hr>
-	<h2> 자바빈객체 사용(Java) </h2>
+	<h2>자바빈객체 사용(Java)</h2>
 	<%
 	
 	   // 자바빈객체 생성
@@ -24,27 +25,29 @@
 	   bean.setId(request.getParameter("id"));
 	
 	%>
-	아이디(java) : <%=bean.getId() %><br>
+	아이디(java) :
+	<%=bean.getId() %><br>
 	<hr>
-	<h2> 자바빈객체 (액션태그 jsp:~) </h2>
-	
+	<h2>자바빈객체 (액션태그 jsp:~)</h2>
+
 	<!-- 자바빈 객체 생성 -->
 	<%--
 	<jsp:useBean id="객체명" class="클래스위치"></jsp:useBean>
 	<jsp:useBean id="객체명" class="클래스위치"/>
 	 --%>
-	<jsp:useBean id="bean1" class="com.itwillbs.bean.JavaBean1" ></jsp:useBean>
+	<jsp:useBean id="bean1" class="com.itwillbs.bean.JavaBean1"></jsp:useBean>
 	<!-- 객체에 id정보 저장 -->
 	<%-- <jsp:setProperty property="속성명" name="객체명" param="파라메터명"/> --%>
-	<jsp:setProperty property="id" name="bean1" param="id"/>
+	<jsp:setProperty property="id" name="bean1" param="id" />
 	<!-- 객체 정보를 출력 -->
-	아이디 (액션태그) : <jsp:getProperty property="id" name="bean1"/>
-	
-	
-	
-	
-	
-	
+	아이디 (액션태그) :
+	<jsp:getProperty property="id" name="bean1" />
+
+
+
+
+
+
 
 </body>
 </html>
