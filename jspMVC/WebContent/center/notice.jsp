@@ -1,0 +1,184 @@
+<%@page import="com.itwillbs.board.db.BoardDTO"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>    
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="./css/default.css" rel="stylesheet" type="text/css">
+<link href="./css/subpage.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js" type="text/javascript"></script>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/ie7-squish.js" type="text/javascript"></script>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+<![endif]-->
+<!--[if IE 6]>
+ <script src="../script/DD_belatedPNG_0.0.8a.js"></script>
+ <script>
+   /* EXAMPLE */
+   DD_belatedPNG.fix('#wrap');
+   DD_belatedPNG.fix('#main_img');   
+
+ </script>
+ <![endif]-->
+</head>
+<body>
+<div id="wrap">
+<!-- 헤더들어가는 곳 -->
+	<jsp:include page="../inc/top.jsp"/>	
+<!-- 헤더들어가는 곳 -->
+
+<!-- 본문들어가는 곳 -->
+<!-- 메인이미지 -->
+<div id="sub_img_center"></div>
+<!-- 메인이미지 -->
+
+<!-- 왼쪽메뉴 -->
+  <jsp:include page="../inc/left.jsp"></jsp:include>
+<!-- 왼쪽메뉴 -->
+
+<%
+		//request 영역에 글정보(list) 저장
+		//request.setAttribute("boardList", boardList);
+		//List boardList = (List)request.getAttribute("boardList");
+		//System.out.println(" V : "+boardList);
+		
+		// request 영역에 페이징처리 정보를 저장
+		// 		request.setAttribute("pageNum", pageNum);
+		// 		request.setAttribute("result", result);
+		// 		request.setAttribute("pageCount", pageCount);
+		// 		request.setAttribute("pageBlock", pageBlock);
+		// 		request.setAttribute("startPage", startPage);
+		// 		request.setAttribute("endPage", endPage);
+		String pageNum = (String)request.getAttribute("pageNum");
+		int result = (int)request.getAttribute("result"); // 글개수
+		int pageCount = (int)request.getAttribute("pageCount");
+		int pageBlock = (int)request.getAttribute("pageBlock");
+		int startPage = (int)request.getAttribute("startPage");
+		int endPage = (int) request.getAttribute("endPage");
+		
+		
+%>
+<!-- 게시판 -->
+<article>
+<h1>model2 (MVC)게시판</h1>
+<table id="notice">
+<tr><th class="tno">No.</th>
+    <th class="ttitle">Title</th>
+    <th class="twrite">Writer</th>
+    <th class="tdate">Date</th>
+    <th class="tread">Read</th></tr>
+    
+   <%--  <%for(int i=0;i<boardList.size();i++){ 
+    		BoardDTO dto = (BoardDTO)boardList.get(i);
+    %>
+	<tr>
+		<td><%=dto.getNum() %></td>
+		<td class="left"><%=dto.getSubject() %></td>
+	    <td><%=dto.getName() %></td>
+	    <td><%=dto.getDate() %></td>
+	    <td><%=dto.getReadcount() %></td>
+    </tr>
+	<%} %> --%>
+	
+	<c:forEach var="dto"  items="${boardList }">
+		<tr>
+		   <td>${dto.num }</td>
+		   <td class="left">
+		       
+		       <c:if test="${dto.re_lev > 0 }">
+		        	<img src="./images/center/level.gif" width="${dto.re_lev * 10 }">
+		        	<img src="./images/center/re.gif">
+		       </c:if> 
+		       
+		   		<a href="./BoardContent.bo?num=${dto.num }&pageNum=<%=pageNum%>">
+		   			${dto.subject }
+		   		</a>
+		   		
+		   		<c:if test="${dto.file != null }">
+		   			<img src="./images/center/save.png" width="20" height="20">
+		   		</c:if>
+		   </td>
+		   <td>${dto.name }</td>
+		   <td>${dto.date }</td>
+		   <td>${dto.readcount }</td>
+		</tr>	
+	</c:forEach>
+	
+	
+</table>
+
+
+<div id="table_search">
+   <!--  검색창 동작 -->
+<!--    	String pageNum = (String)request.getAttribute("pageNum"); -->
+<!-- 		int result = (int)request.getAttribute("result"); // 글개수 -->
+<!-- 		int pageCount = (int)request.getAttribute("pageCount"); -->
+<!-- 		int pageBlock = (int)request.getAttribute("pageBlock"); -->
+<!-- 		int startPage = (int)request.getAttribute("startPage"); -->
+<!-- 		int endPage = (int) request.getAttribute("endPage"); -->
+   
+    <form action="./BoardSearch.bo" method="get">
+        <input type="hidden" name="result" value="<%=result%>">
+        <input type="hidden" name="pageCount" value="<%=pageCount%>">
+        <input type="hidden" name="pageBlock" value="<%=pageBlock%>">
+        <input type="hidden" name="startPage" value="<%=startPage%>">
+        <input type="hidden" name="endPage" value="<%=endPage%>">
+        
+		<input type="text" name="search" class="input_box">
+		<input type="submit" value="search" class="btn">
+	</form>
+   <!--  검색창 동작 -->
+	<hr>
+	<input type="button" value="글쓰기" id="btn" onclick=" location.href='./BoardWrite.bo'; ">
+</div>
+
+<div class="clear"></div>
+	
+	<div id="page_control">
+    	<%
+    	if(result != 0){
+    		
+		// 이전
+   		if(startPage > pageBlock){
+   		%>
+   		   <a href="./BoardList.bo?pageNum=<%=startPage-pageBlock%>">[이전]</a>
+  		<%
+    	}
+    	
+   		//  1 2 3 4 ... 10   11 12 13.... 20 
+    	for(int i=startPage;i<=endPage;i++){
+    		   %>
+    		       <a href="./BoardList.bo?pageNum=<%=i%>">[<%=i %>]</a>      		   
+    		   <% 		
+    	}
+   		
+    	// 다음
+    	if(endPage < pageCount){
+    		%>
+    		    <a href="./BoardList.bo?pageNum=<%=startPage+pageBlock%>">[다음]</a>
+    		<%
+    	}
+    	
+    	}
+   		
+    	%>
+	</div>
+	
+	
+	
+</article>
+<!-- 게시판 -->
+<!-- 본문들어가는 곳 -->
+<div class="clear"></div>
+<!-- 푸터들어가는 곳 -->
+	<jsp:include page="../inc/bottom.jsp"/>
+<!-- 푸터들어가는 곳 -->
+</div>
+</body>
+</html>

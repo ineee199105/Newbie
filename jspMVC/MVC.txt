@@ -1,0 +1,54 @@
+Model2
+ -> 디자인/개발(비지니스로직)을 분리
+
+* MVC 패턴
+  Model : 디비연동, 데이터처리 (비지니스 로직) -> Java
+  View : 디자인  -> jsp/html
+  Controller : model-view 연결시키는 동작 -> Servlet
+
+         (request)
+ 클라이언트   ->     Controller   <->  Model <-> DB
+ (사용자)               |
+                     View
+
+ * MVC 패턴을 사용하는 이유 :  디자인/개발(비지니스로직)을 분리
+     => 관심사의 분리 => 분업하자
+       => 좋은 프로그램(코드) 작성   (SOLID개발원칙)
+
+
+   4-3-3 =>  4 - 3 - 2 - 1
+
+
+* 상대주소
+	./BoardWrite.bo (가상주소) 
+	 => ./ 의 의미는 프로젝트명(jspMVC)
+	 	 [/jspMVC/BoardWrite.bo]
+	 	  
+	./center/notice.jsp (실제주소)
+     => ./ 의 의미는 WebContent
+        [/WebContent/center/notice.jsp]
+        
+        
+   * MVC + 쇼핑몰 
+   
+   1) 관리자 상품등록     
+        
+     CREATE TABLE `jspdb`.`itwill_goods` (
+  `num` INT NOT NULL,
+  `category` VARCHAR(45) NULL,
+  `name` VARCHAR(45) NULL,
+  `content` VARCHAR(45) NULL,
+  `size` VARCHAR(45) NULL,
+  `color` VARCHAR(45) NULL,
+  `amount` INT NULL,
+  `price` INT NULL,
+  `image` VARCHAR(2000) NULL,
+  `best` INT NULL,
+  `date` DATE NULL,
+  PRIMARY KEY (`num`));
+        
+
+
+
+
+
