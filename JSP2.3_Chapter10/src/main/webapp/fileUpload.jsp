@@ -41,7 +41,7 @@ try {
 <title>Insert title here</title>
 </head>
 <body>
-	<form name="filecheck" action="filecheck.jsp" method="post">
+	<form name="filecheck" action="fileCheck.jsp" method="post">
 		<input type="hidden" name="name" value="<%=name%>"> <input
 			type="hidden" name="subject" value="<%=subject%>"> <input
 			type="hidden" name="filename1" value="<%=filename1%>"> <input
