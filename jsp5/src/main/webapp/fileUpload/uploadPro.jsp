@@ -15,7 +15,7 @@
 	  //String uploadPath = "D:\\zzz";
 	  //String uploadPath = "C:\\Users\\ITWILL";
 	  // => 상용서비스에서의 직접경로 업로드 불가능
-      // => 가상 경로 upload
+      // => 가상 경로 upload	
       
 	  String uploadPath = request.getRealPath("/upload"); 	  
 	
@@ -24,8 +24,7 @@
 	  
 	  // 파일 업로드
 	  
-	  MultipartRequest multi 
-	         = new MultipartRequest(
+	  MultipartRequest multi = new MultipartRequest(
 	        		 request,
 	        		 uploadPath,
 	        		 size,
