@@ -57,7 +57,7 @@
 			</a>
 		</td>
 		<td>
-			<a href="member_delete.jsp?id=<%=rs.getString("id") %>">삭제</a>
+			<a href="member_delete.jsp?id=<%= rs.getString("id") %>">삭제</a>
 		</td>
 	</tr>
 	<%} %>

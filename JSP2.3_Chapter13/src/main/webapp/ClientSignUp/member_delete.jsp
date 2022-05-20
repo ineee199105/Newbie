@@ -24,7 +24,7 @@
 			DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
 			conn = ds.getConnection();
 			
-			pstmt = conn.prepareStatement("DELECT FROM member WHERE id=?");
+			pstmt = conn.prepareStatement("DELETE FROM member WHERE id=?");
 			pstmt.setString(1, delete_id);
 			pstmt.executeUpdate();
 			
