@@ -5,7 +5,7 @@
 	Connection conn = null;
 
 	String driver = "com.mysql.cj.jdbc.Driver";
-	String url = "jdbc:mysql://localhost:3306/dbtest?serverTimezone=UTC";
+	String url = "jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC";
 	
 	Boolean connect = false;
 	
