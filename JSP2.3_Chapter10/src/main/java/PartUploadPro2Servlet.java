@@ -12,7 +12,7 @@ import javax.servlet.http.Part;
 /**
  * Servlet implementation class PartUploadPro2Servlet
  */
-@WebServlet("/PartUploadPro2")
+@WebServlet("/partUploadPro2")
 @MultipartConfig(
 		fileSizeThreshold=0,
 		location = "C:/upload"
