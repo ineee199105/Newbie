@@ -19,7 +19,7 @@
 </head>
 <body>
 <section id = "uploadFormArea">
-<form action = "fileUpload.jsp" method="post" enctype="multipart/formdata">
+<form action = "fileUpload.jsp" method="post" enctype="multipart/form-data">
 			<table>
 				<tr>
 					<td colspan="2" class="td_title">파일 업로드 폼</td>
