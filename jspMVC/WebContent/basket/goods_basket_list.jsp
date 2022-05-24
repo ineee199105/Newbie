@@ -58,7 +58,7 @@
 	    <th class="ttitle">취소</th>
     </tr>
     <!-- 0  1   2 -->
-    <c:forEach var="i" begin="0" end="${basketList.size()-1 }" step="1">
+    <c:forEach var="i" begin="0" end="${basketList.size()+1 }" step="1">
          <%-- ${i } --%>
          <c:set var="basket" value="${basketList[i] }" />
          <c:set var="goods"  value="${goodsList[i] }"/>

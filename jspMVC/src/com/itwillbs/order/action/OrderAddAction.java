@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.itwillbs.basket.db.BasketDAO;
+import com.itwillbs.goods.db.GoodsDAO;
 import com.itwillbs.order.db.OrderDAO;
 import com.itwillbs.order.db.OrderDTO;
 
@@ -67,8 +68,27 @@ public class OrderAddAction implements Action {
 		orDAO.addOrder(dto,basketList,goodsList);
 		
 		// 메일,문자 알림 (Thread)
+		System.out.println("------------------------------------------");
+		new Thread(new Runnable() {
+						//원래 Runnable은 interface라 new 연산자 불가능  * Inner class
+			@Override
+			public void run() {
+				try {
+					Thread.sleep(50000); // 쓰레드를 5초간 재운다( = 메모리 전환)
+		System.out.println("          메일/알림 실행 완료             ");
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				// TODO Auto-generated method stub
+				
+			}
+		}).start();
 		
+		System.out.println("------------------------------------------");
 		// 상품 수량 수정
+		GoodsDAO gdao = new GoodsDAO();
+		gdao.updateAmount(basketList);
+		
 		
 		// 장바구니 삭제(비우기)
 		

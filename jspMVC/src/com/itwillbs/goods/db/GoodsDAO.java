@@ -203,6 +203,18 @@ public class GoodsDAO {
 	// getGoods(num)
 	
 	
+	// updateAmount(basketList)
+	public void updateAmout(List basketList) {
+		//1.2. 디비연결
+		GoodsDTO dto = null;
+		
+		
+		// 3. sql 작성(update) & pstmt 객체 (for)
+	
+		// 4. sql 실행
+	}
+	
+	//updateAmout(basketList)
 	
 	
 	

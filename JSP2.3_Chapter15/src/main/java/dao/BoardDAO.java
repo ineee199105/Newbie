@@ -52,7 +52,6 @@ public class BoardDAO {
 
 		return listCount;
 	}
-
 	// 글 목록 보기
 	public ArrayList<BoardBean> selectArticleList(int page, int limit) {
 

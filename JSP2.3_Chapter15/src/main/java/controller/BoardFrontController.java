@@ -16,9 +16,6 @@ import vo.ActionForward;
 @WebServlet("*.bo")
 public class BoardFrontController extends javax.servlet.http.HttpServlet 
 {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	protected void doProcess (HttpServletRequest request, HttpServletResponse response)
