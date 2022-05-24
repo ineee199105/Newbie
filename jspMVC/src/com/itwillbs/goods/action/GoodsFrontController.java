@@ -52,6 +52,20 @@ public class GoodsFrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/GoodsDetail.go")){
+			System.out.println(" C : /GoodsDetail.go 호출 ");
+			// DB 사용o, 페이지 출력
+			// GoodsDetailAction 객체 생성
+			
+			action = new GoodsDetailAction();
+			
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
 		
 		
 		

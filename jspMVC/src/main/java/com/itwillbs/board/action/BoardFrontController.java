@@ -1,4 +1,4 @@
-package com.itwillbs.board.action;
+package main.java.com.itwillbs.board.action;
 
 import java.io.IOException;
 

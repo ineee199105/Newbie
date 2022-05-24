@@ -46,7 +46,73 @@ Model2
   `best` INT NULL,
   `date` DATE NULL,
   PRIMARY KEY (`num`));
+  
+  
+  
+   String   
+    문자열		
+    버퍼X    	
+    실행된 메서드의 결과 저장 X
+    String str = "hello";
+    String str = new String("hellO");
+   
+    vs      
+   StringBuffer       
+    문자열   
+    버퍼O  
+    실행된 메서드의 결과 저장 O   
+    StringBuffer buf = new StringBuffer();
+    buf.append("hello");   
         
+
+
+
+CREATE TABLE `jspdb`.`itwill_basket` (
+  `b_num` INT NOT NULL COMMENT '장바구니 고유번호',
+  `b_m_id` VARCHAR(45) NOT NULL COMMENT '회원 아이디',
+  `b_g_num` INT NOT NULL COMMENT '장바구니에 저장된 상품 번호',
+  `b_g_amount` INT NOT NULL COMMENT '구매수량',
+  `b_g_size` VARCHAR(45) NOT NULL COMMENT '구매옵션사이즈',
+  `b_g_color` VARCHAR(45) NOT NULL COMMENT '구매옵션색상',
+  `b_date` DATE NULL,
+  PRIMARY KEY (`b_num`));
+
+
+CREATE TABLE `jspdb`.`itwill_order` (
+  `o_num` INT NOT NULL,   주문번호(DB)
+  `o_trade_num` VARCHAR(45) NULL,  주문번호(구매번호+날짜정보)
+  `o_g_num` INT NULL,   주문한 상품번호
+  `o_g_name` VARCHAR(45) NULL,    주문한 상품이름
+  `o_g_amount` INT NULL,	주문한 상품 수량
+  `o_g_size` VARCHAR(45) NULL,   주문한 상품 사이즈
+  `o_g_color` VARCHAR(45) NULL,   주문한 상품 컬러
+  `o_m_id` VARCHAR(45) NULL,	  주문한 회원 아이디
+  `o_r_name` VARCHAR(45) NULL,		받는사람 이름
+  `o_r_addr1` VARCHAR(45) NULL,		받는 사람 주소1
+  `o_r_addr2` VARCHAR(45) NULL,		받는 사람 주소2
+  `o_r_phone` VARCHAR(45) NULL,		받는 사람 연락처
+  `o_r_msg` VARCHAR(45) NULL,		메세지
+  `o_sum_money` INT NULL,			총 합계금액
+  `o_trade_type` VARCHAR(45) NULL,	결제 방법
+  `o_trade_payer` VARCHAR(45) NULL,	결제자 이름(입금자명)
+  `o_trade_date` DATE NULL,			결제 일시
+  `o_trans_num` VARCHAR(45) NULL,	택배 운송장번호
+  `o_date` DATE NULL,				주문 일시
+  `o_status` INT NULL,				주문 상태
+  PRIMARY KEY (`o_num`));
+
+
+
+  * 프로세스 : 실행중인 프로그램 (메모리에 로드되어 있는 프로그램)
+  * 멀티 프로세스 / 멀티 테스킹 : 동시에 여러개의 작업을 수행
+  (짧은 시간동안 번갈아가면서 실행)
+  
+  * 멀티 쓰레드(Multi-Thread) : 동시에 여러개의 Thread를 실행
+
+
+
+
+
 
 
 

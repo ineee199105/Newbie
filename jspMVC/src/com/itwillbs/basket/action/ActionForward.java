@@ -1,4 +1,4 @@
-package main.java.com.itwillbs.board.action;
+package com.itwillbs.basket.action;
 
 public class ActionForward {
 	// 페이지 이동할때 사용하는 객체
@@ -7,6 +7,8 @@ public class ActionForward {
 	private boolean isRedirect;  // 이동방식 저장
 	// redirect 방식 : true   주소변환 O , 화면변환 O
 	// forward 방식 : false   주소변환 X, 화면변환 O
+	
+	
 	
 	// alt shift s + r
 	public String getPath() {
@@ -23,6 +25,11 @@ public class ActionForward {
 	}
 	
 
+	// alt shift s + s
+	@Override
+	public String toString() {
+		return "ActionForward [path=" + path + ", isRedirect=" + isRedirect + "]";
+	}
 	
 	
 

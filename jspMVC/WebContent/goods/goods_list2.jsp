@@ -50,61 +50,52 @@
 %>
 <!-- 게시판 -->
 <article>
-<h1>등록 상품 목록(관리자용)</h1>
+<h1>등록 상품 목록(사용자용)</h1>
 <table id="notice">
 	<tr>
-		<th class="ttitle" colspan="2">
-		  <a href="./GoodsAdd.ag">상품<br>등록하기</a>
+		<th class="tno" colspan="4">
+		<a href="./GoodsList.go">전체</a>  &nbsp; &nbsp; &nbsp; &nbsp;
+		<a href="./GoodsList.go?item=best">인기상품</a>  &nbsp; &nbsp;   &nbsp; &nbsp;
+		<a href="./GoodsList.go?item=outwear">외투</a>   &nbsp; &nbsp; &nbsp; &nbsp;
+		<a href="./GoodsList.go?item=fulldress">정장</a>   &nbsp; &nbsp; &nbsp; &nbsp;
+		<a href="./GoodsList.go?item=Tshirts">티셔츠</a>   &nbsp; &nbsp; &nbsp; &nbsp;
+		<a href="./GoodsList.go?item=shirts">와이셔츠</a>  &nbsp; &nbsp;  &nbsp; &nbsp;
+		<a href="./GoodsList.go?item=pants">바지</a>    &nbsp; &nbsp; &nbsp; &nbsp;
+		<a href="./GoodsList.go?item=shoes">신발</a>
 		</th>
     </tr>
-	<tr>
-		<th class="tno" colspan="4">
-		전체  &nbsp; &nbsp; &nbsp; &nbsp;
-		인기상품  &nbsp; &nbsp;   &nbsp; &nbsp;
-		외투   &nbsp; &nbsp; &nbsp; &nbsp;
-		정장   &nbsp; &nbsp; &nbsp; &nbsp;
-		티셔츠   &nbsp; &nbsp; &nbsp; &nbsp;
-		와이셔츠  &nbsp; &nbsp;  &nbsp; &nbsp;
-		바지    &nbsp; &nbsp; &nbsp; &nbsp;
-		신발</th>
-    </tr>
     
-    <%
-      // 등록된 상품의 수
-      int size = goodsList.size();
-      // 컬럼의 수 (가로출력 수)
-      int col = 4;
-      // 행의 수 (세로출력 수)
-      int row = size/col + (size%col>0? 1:0);
-      
-      // 상품개수 체크
-      int goodsCnt = 0;
-      
-      // 1) 행 만들기
-	  for(int i=0;i<row;i++){
-		  %>
-		    <tr>
-		       <%
-		       // 2) 열 만들기
-		        for(int j=0;j<col;j++){
-		        	GoodsDTO dto = goodsList.get(goodsCnt);
-					%>
-					 <td>
-					     <img src="./shopUpload/<%=dto.getImage().split(",")[0]%>"
-					         width="160" height="160"><br>
-					     <%=dto.getName() %><br>
-					     <%=dto.getPrice() %>원<br>
-					 </td>
-					<%	
-					goodsCnt++;
-					if(size <= goodsCnt) break;
-		        }	    	   
-		       %>		    
-		    </tr>
-		  <%
-	  }
-      
-    %>
+    
+    <c:set var="size" value="${goodsList.size() }"/>
+    <%-- 크기 : ${size } --%>
+    <c:set var="col" value="4"/>
+    <c:set var="row" value="${(size/col + (size%col>0? 1:0)) }"/>
+    <%-- row : ${row } --%>
+    <c:set var="goodsCnt" value="0"/>
+    
+    <c:set var="list" value="${goodsList }"/>
+    
+    
+	    <c:forEach begin="1" end="${row }" step="1">
+	       <tr>
+	           <c:forEach begin="1" end="${col }" step="1">
+	            <c:if test="${size > goodsCnt}">
+	              <td>
+	                   <img src="./shopUpload/${list[goodsCnt].image.split(',')[0]}"
+						         width="160" height="160"><br>
+						     
+						     <a href="./GoodsDetail.go?num=${list[goodsCnt].num }">${list[goodsCnt].name }</a><br>
+						     ${list[goodsCnt].price }원<br>		
+	              </td>
+                </c:if>
+	              <c:set var="goodsCnt" value="${goodsCnt+1 }"/>
+	              
+	           </c:forEach>         
+	       </tr>
+	    </c:forEach>
+  
+    
+    
     
     
     

@@ -13,7 +13,12 @@
   // response.sendRedirect("./BoardList.bo");
    //response.sendRedirect("./GoodsList.ag");
    
-   response.sendRedirect("./GoodsList.go");
+   // 테스트용 ID정보 생성
+   //session.setAttribute("id","admin");
+   session.setAttribute("id","itwill");
+   
+//    response.sendRedirect("./GoodsList.go");
+   response.sendRedirect("./BasketList.ba");
 
 
 %>    
