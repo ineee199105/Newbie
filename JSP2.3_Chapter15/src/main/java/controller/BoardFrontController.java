@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.BoardListAction;
+import action.BoardModifyFormAction;
 import action.BoardWriteProAction;
 import vo.ActionForward;
 

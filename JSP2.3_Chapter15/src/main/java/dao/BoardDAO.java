@@ -291,7 +291,6 @@ public class BoardDAO {
 		return updateCount;
 
 	}
-
 	// 글쓴이인지 확인
 	public boolean isArticleBoardWriter(int board_num, String pass) {
 

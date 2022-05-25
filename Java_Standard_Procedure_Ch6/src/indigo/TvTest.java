@@ -17,7 +17,6 @@ public class TvTest {
 	public static void main(String[] args) {
 		Tv t; // TV인스턴스를 참조하기 위한 변수 t(참조변수)를 선언
 		t = new Tv(); // Tv인스턴스를 생성한다
-		
 	}
 
 }
