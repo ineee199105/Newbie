@@ -2,11 +2,8 @@ package mailtest;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.mail.Authenticator;
 import java.util.Properties;
-import javax.mail.Address;
-import javax.mail.Message;
-import javax.mail.Session;
+
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -15,6 +12,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.catalina.Authenticator;
+
+import com.mysql.cj.Session;
+
+import oracle.jdbc.driver.Message;
+import oracle.net.jdbc.TNSAddress.Address;
 
 /**
  * Servlet implementation class MailSendServlet

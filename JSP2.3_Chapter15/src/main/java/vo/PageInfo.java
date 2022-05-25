@@ -1,8 +1,13 @@
 package vo;
 
-public class pageInfo {
+public class PageInfo {
 
 	private int page;
+	private int maxPage;
+	private int startPage;
+	private int endPage;
+	private int listCount;
+	
 	public int getPage() {
 		return page;
 	}
@@ -33,9 +38,5 @@ public class pageInfo {
 	public void setListCount(int listCount) {
 		this.listCount = listCount;
 	}
-	private int maxPage;
-	private int startPage;
-	private int endPage;
-	private int listCount;
 
 }

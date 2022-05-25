@@ -29,7 +29,6 @@ public class BoardDAO {
 	public void setConnection(Connection con) {
 		this.con = con;
 	}
-
 	// 글의 개수 구하기
 	public int selectListCount() {
 		int listCount = 0;
@@ -91,7 +90,6 @@ public class BoardDAO {
 
 		return articleList;
 	}
-
 	// 글 내용 보기
 	public BoardBean selectArticle(int board_num) {
 
@@ -127,7 +125,6 @@ public class BoardDAO {
 		return boardBean;
 
 	}
-
 	// 글 등록
 	public int insertArticle(BoardBean article) {
 
@@ -173,7 +170,6 @@ public class BoardDAO {
 		return insertCount;
 
 	}
-
 	// 글 답변
 	public int insertReplyAction(BoardBean article) {
 

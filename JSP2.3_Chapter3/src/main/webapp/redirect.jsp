@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	request 속성값 :<%=request.getAttribute("request") %>
+	request 속성 값 :<%=request.getAttribute("request") %>
 </body>
 </html>

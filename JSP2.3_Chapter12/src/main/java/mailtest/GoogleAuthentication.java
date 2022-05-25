@@ -1,7 +1,9 @@
 package mailtest;
 
 import javax.mail.Authenticator;
-import javax.mail.PasswordAuthentication;
+import javax.mail.PasswordAuthenticator;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
 
 public class GoogleAuthentication extends Authenticator {
 	PasswordAuthentication passAuth;
