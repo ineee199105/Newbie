@@ -170,7 +170,7 @@ public class BoardDAO {
 		return insertCount;
 
 	}
-	// 글 답변
+	// 글 답변 등록
 	public int insertReplyAction(BoardBean article) {
 
 		PreparedStatement pstmt = null;
@@ -228,7 +228,6 @@ public class BoardDAO {
 		return insertCount;
 
 	}
-
 	// 글 수정
 	public int updateArticle(BoardBean article) {
 
@@ -250,7 +249,6 @@ public class BoardDAO {
 		return updateCount;
 
 	}
-
 	// 글 삭제
 	public int deleteArticle(int board_num) {
 
@@ -271,7 +269,6 @@ public class BoardDAO {
 		return deleteCount;
 
 	}
-
 	// 조회수 업데이트
 	public int updateReadCount(int board_num) {
 

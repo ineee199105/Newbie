@@ -14,3 +14,5 @@ PRIMARY KEY (BOARD_NUM)
 );
 
 show databases;
+
+SELECT * FROM board

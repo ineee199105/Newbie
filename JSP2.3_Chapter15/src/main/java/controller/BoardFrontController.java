@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import action.Action;
 import action.BoardListAction;
 import action.BoardModifyFormAction;
+import action.BoardModifyProAction;
+import action.BoardReplyFormAction;
+import action.BoardReplyProAction;
 import action.BoardWriteProAction;
 import vo.ActionForward;
 
@@ -28,7 +31,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		String command = RequestURI.substring(contextPath.length());
 		ActionForward forward = null;
 		Action action = null;
-		
+		//게시판 글 쓰기 폼 액션
 		if(command.equals("/boardWriteForm.bo")) {
 			forward = new ActionForward();
 			forward.setPath("/board/qna_board_write.jsp");
@@ -40,6 +43,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		//게시판 목록 보기 액션
 		else if(command.equals("/boardList.bo")) {
 			action = new BoardListAction();
 			try {
@@ -48,6 +52,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+//		게시판 답글 폼 액션
 		else if(command.equals("/boardReplyForm.bo")) {
 			action = new BoardReplyFormAction();
 			try {
@@ -55,6 +60,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+//		게시판 답글 절차
 		}
 		else if(command.equals("/boardReplyPro.bo")) {
 			action = new BoardReplyProAction();
@@ -63,6 +69,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+//		게시판 수정 폼
 		}
 		else if(command.equals("/boardModifyForm.bo")) {
 			action = new BoardModifyFormAction();
@@ -71,6 +78,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+//		게시판 수정 절차
 		} 
 		else if(command.equals("/boardModifyPro.bo")) {
 			action = new BoardModifyProAction();
@@ -79,6 +87,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+//		게시판 삭제 폼
 		} else if(command.equals("/boardDeleteForm.bo")) {
 			String nowPage = request.getParameter("page");
 			request.setAttribute("page", nowPage);
@@ -87,6 +96,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			forward = new ActionForward();
 			forward.setPath("/board/qna_board_delete.jsp");
 		}
+//		게시판 삭제 절차
 		else if(command.equals("/boardDeletePro.bo")) {
 			try {
 				forward = action.execute(request, response);
@@ -94,7 +104,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-	
+// 	forwawrd 의 redirect 와 dispatcher 결정
 	if (forward != null) {
 		
 		if(forward.isRedirect()) {
