@@ -8,17 +8,15 @@ import javax.sql.DataSource;
 public class JdbcUtil {
 
 	public static Connection getConnection() {
-
 		Connection con = null;
 
 		try {
 			Context initCtx = new InitialContext();
-			Context envCtx = (Context) initCtx.lookup("java:/comp/env");
+			Context envCtx = (Context) initCtx.lookup("java:comp/env"); //lookup은 Object 타입으로 반환
 			DataSource ds = (DataSource) envCtx.lookup("jdbc/MySQLDB");
 			con = ds.getConnection();
 			con.setAutoCommit(false);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -38,7 +36,7 @@ public class JdbcUtil {
 
 		try {
 			stmt.close();
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -48,7 +46,7 @@ public class JdbcUtil {
 
 		try {
 			rs.close();
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -57,9 +55,9 @@ public class JdbcUtil {
 	public static void commit(Connection con) {
 
 		try {
-			con.close();
+			con.commit();
 			System.out.println("commit success");
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -68,9 +66,9 @@ public class JdbcUtil {
 	public static void rollback(Connection con) {
 
 		try {
-			con.close();
+			con.rollback();
 			System.out.println("rollback success");
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

@@ -41,7 +41,7 @@ public class BoardListAction implements Action {
 		pageInfo.setStartPage(startPage);
 		pageInfo.setPage(page);
 		request.setAttribute("pageInfo", pageInfo);
-		request.setAttribute("articlList", articleList);
+		request.setAttribute("articleList", articleList);
 		ActionForward forward = new ActionForward();
 		forward.setPath("/board/qna_board_list.jsp");
 		return forward;

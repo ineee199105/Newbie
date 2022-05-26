@@ -56,7 +56,7 @@ table {
 <body>
 	<section id="listForm">
 		<h2>
-			글 목록<a href="boardWriterForm.bo">게시판 글 쓰기</a>
+			글 목록<a href="boardWriteForm.bo">게시판 글 쓰기</a>
 		</h2>
 		<table>
 			<%

@@ -7,7 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import action.Action;
 import action.BoardListAction;
 import action.BoardModifyFormAction;
@@ -20,7 +19,6 @@ import vo.ActionForward;
 @WebServlet("*.bo")
 public class BoardFrontController extends javax.servlet.http.HttpServlet 
 {
-	private static final long serialVersionUID = 1L;
 
 	protected void doProcess (HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
@@ -31,11 +29,11 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		String command = RequestURI.substring(contextPath.length());
 		ActionForward forward = null;
 		Action action = null;
-		//게시판 글 쓰기 폼 액션
-		if(command.equals("/boardWriteForm.bo")) {
+		
+		if(command.equals("/board/boardWriteForm.bo")) {
 			forward = new ActionForward();
 			forward.setPath("/board/qna_board_write.jsp");
-		} else if (command.equals("/boardWritePro.bo")) {
+		} else if (command.equals("/board/boardWritePro.bo")) {
 			action = new BoardWriteProAction();
 			try {
 				forward = action.execute(request, response);
@@ -44,7 +42,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		//게시판 목록 보기 액션
-		else if(command.equals("/boardList.bo")) {
+		else if(command.equals("/board/boardList.bo")) {
 			action = new BoardListAction();
 			try {
 				forward = action.execute(request, response);
@@ -108,8 +106,9 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 	if (forward != null) {
 		
 		if(forward.isRedirect()) {
-			response.sendRedirect(forward.getPath());
+			response.sendRedirect(forward.getPath()); //boardList.bo
 		}else {
+			System.out.println(request.getAttribute("articleList"));
 			RequestDispatcher dispatcher =
 					request.getRequestDispatcher(forward.getPath());
 			dispatcher.forward(request, response);
