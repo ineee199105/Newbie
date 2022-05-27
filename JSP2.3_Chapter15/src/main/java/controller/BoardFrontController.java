@@ -7,7 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import action.Action;
+import action.BoardDetailAction;
 import action.BoardListAction;
 import action.BoardModifyFormAction;
 import action.BoardModifyProAction;
@@ -19,6 +21,7 @@ import vo.ActionForward;
 @WebServlet("*.bo")
 public class BoardFrontController extends javax.servlet.http.HttpServlet 
 {
+	private static final long serialVersionUID = 1L;
 
 	protected void doProcess (HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
@@ -50,8 +53,16 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/board/boardDetail.bo")) {
+			action = new BoardDetailAction();
+			try {
+				forward=action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 //		게시판 답글 폼 액션
-		else if(command.equals("/boardReplyForm.bo")) {
+		else if(command.equals("/board/boardReplyForm.bo")) {
 			action = new BoardReplyFormAction();
 			try {
 				forward = action.execute(request, response);
@@ -60,7 +71,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 //		게시판 답글 절차
 		}
-		else if(command.equals("/boardReplyPro.bo")) {
+		else if(command.equals("/board/boardReplyPro.bo")) {
 			action = new BoardReplyProAction();
 			try {
 				forward = action.execute(request, response);

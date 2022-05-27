@@ -25,7 +25,7 @@ public class BoardListAction implements Action {
 		articleList = boardListService.getArticleList(page, limit);
 		// 리스트를 받아옴
 		// 총 페이지 수
-		int maxPage = (int) ((double) listCount / limit + 0.95);
+		int maxPage = (int) ((double)(listCount / limit) + 0.95);
 		// 0.95를 더해서 올림처리
 		// 현재 페이지에 보여줄 시작 페이지 수 (1, 11, 21 등...)
 		int startPage = (((int) ((double) page / 10 + 0.9) - 1) * 10 - 1);

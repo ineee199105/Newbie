@@ -17,7 +17,7 @@ public class BoardDetailAction implements Action {
 		BoardBean article = boardDetailService.getArticle(board_num);
 		ActionForward forward = new ActionForward();
 		request.setAttribute("page", page);
-		request.setAttribute("aricle", article);
+		request.setAttribute("article", article);
 		forward.setPath("/board/qna_board_view.jsp");
 		return forward;
 		

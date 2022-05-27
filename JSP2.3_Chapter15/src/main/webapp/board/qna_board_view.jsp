@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@	page import="vo.BoardBean" %>
+
 <%
 	BoardBean article = (BoardBean)request.getAttribute("article");
 	String nowPage = (String)request.getAttribute("page");
 %>    
-    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +28,7 @@ h2 {
 	text-align : center;
 }
 
-#articleContenArea {
+#articleContentArea {
 	background : orange;
 	margin-top : 20px;
 	height : 350px;
@@ -55,6 +56,16 @@ h2 {
 				</a>
 			<%} %>
 		</section>
-	</section>
+		<section id="articleContentArea">
+			<%=article.getBOARD_CONTENT() %>
+			</section>
+		</section>
+		<section id="commandList">
+			<a href = "/board/ReplyForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>"> [답변] </a>
+			<a href = "/board/boardModifyForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>"> [수정] </a>
+			<a href = "/board/boardDeleteForm.bo?board_num=<%=article.getBOARD_NUM() %>&page=<%=nowPage%>"> [삭제] </a>
+			<a href = "/board/boardList.bo?page=<%=nowPage %>"> [목록] </a>
+			&nbsp;&nbsp;
+		</section>
 </body>
 </html>

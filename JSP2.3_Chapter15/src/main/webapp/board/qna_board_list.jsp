@@ -56,7 +56,8 @@ table {
 <body>
 	<section id="listForm">
 		<h2>
-			글 목록<a href="boardWriteForm.bo">게시판 글 쓰기</a>
+			글 목록 <br>
+			<a href="boardWriteForm.bo">게시판 글 쓰기</a>
 		</h2>
 		<table>
 			<%
@@ -75,11 +76,15 @@ table {
 			<tr>
 				<td><%=articleList.get(i).getBOARD_NUM() %></td>
 				<td>
-					<%if(articleList.get(i).getBOARD_RE_LEV() !=0){ %> <%for(int a=0; a<=articleList.get(i).getBOARD_RE_LEV()*2; a++){ %>%ndsp;
-					<%} %> ▶ <%}else{ %> ▶ <%} %> <a
-					href="boardDetail.bo?board_num=<%=articleList.get(i).getBOARD_NUM() %>&page=<%=nowPage %>">
+					<%if(articleList.get(i).getBOARD_RE_LEV() !=0){ %> 
+						<%for(int a=0; a<=articleList.get(i).getBOARD_RE_LEV()*2; a++){ %>%ndsp;
+					<%} %> 
+					 ▶ 
+					<%}else{ %>
+					 ▶ 
+					<%} %> <a href="boardDetail.bo?board_num=<%=articleList.get(i).getBOARD_NUM() %>&page=<%=nowPage %>">
 						<%=articleList.get(i).getBOARD_SUBJECT() %>
-				</a>
+					</a>
 				</td>
 				<td><%=articleList.get(i).getBOARD_NAME() %></td>
 				<td><%=articleList.get(i).getBOARD_DATE() %></td>
