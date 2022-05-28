@@ -33,10 +33,10 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		ActionForward forward = null;
 		Action action = null;
 		
-		if(command.equals("/board/boardWriteForm.bo")) {
+		if(command.equals("/boardWriteForm.bo")) {
 			forward = new ActionForward();
 			forward.setPath("/board/qna_board_write.jsp");
-		} else if (command.equals("/board/boardWritePro.bo")) {
+		} else if (command.equals("/boardWritePro.bo")) {
 			action = new BoardWriteProAction();
 			try {
 				forward = action.execute(request, response);
@@ -45,7 +45,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 		//게시판 목록 보기 액션
-		else if(command.equals("/board/boardList.bo")) {
+		else if(command.equals("/boardList.bo")) {
 			action = new BoardListAction();
 			try {
 				forward = action.execute(request, response);
@@ -53,7 +53,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/board/boardDetail.bo")) {
+		else if(command.equals("/boardDetail.bo")) {
 			action = new BoardDetailAction();
 			try {
 				forward=action.execute(request, response);
@@ -62,7 +62,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 //		게시판 답글 폼 액션
-		else if(command.equals("/board/boardReplyForm.bo")) {
+		else if(command.equals("/boardReplyForm.bo")) {
 			action = new BoardReplyFormAction();
 			try {
 				forward = action.execute(request, response);
@@ -71,7 +71,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 //		게시판 답글 절차
 		}
-		else if(command.equals("/board/boardReplyPro.bo")) {
+		else if(command.equals("/boardReplyPro.bo")) {
 			action = new BoardReplyProAction();
 			try {
 				forward = action.execute(request, response);
