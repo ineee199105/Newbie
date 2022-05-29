@@ -56,7 +56,7 @@ public class BoardDAO {
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String board_list_sql = "SELECT * FROM board ORDER BY BOARD_RE_REF DESC, BOARD_RE_SEQ ASC limit ?, 10";
+		String board_list_sql = "SELECT * FROM (SELECT * FROM board ORDER BY BOARD_RE_REF DESC, BOARD_RE_SEQ ASC) ORDERS LIMIT ?, 10";
 		ArrayList<BoardBean> articleList = new ArrayList<BoardBean>();
 		BoardBean board = null;
 		int startrow = (page - 1) * 10;

@@ -9,12 +9,13 @@ import vo.BoardBean;
 
 public class BoardReplyProService {
 	
-	public boolean registReply(BoardBean boardBean) throws Exception {
+	public boolean registReply(BoardBean article) throws Exception {
 		boolean isReplySuccess = false;
+		int insertCount = 0;
 		Connection con = getConnection();
 		BoardDAO boardDAO = BoardDAO.getInstance();
 		boardDAO.setConnection(con);
-		int insertCount = boardDAO.insertReplyAction(boardBean);
+		insertCount = boardDAO.insertReplyAction(article);
 		
 		if (insertCount > 0) {
 			commit(con);

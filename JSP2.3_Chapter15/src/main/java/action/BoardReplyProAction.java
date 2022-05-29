@@ -18,6 +18,7 @@ public class BoardReplyProAction implements Action {
 		ActionForward forward = null;
 		String nowPage = request.getParameter("page");
 		BoardBean article = new BoardBean();
+		System.out.println(request.getParameter("BOARD_NAME"));
 		article.setBOARD_NUM(Integer.parseInt(request.getParameter("BOARD_NUM")));
 		article.setBOARD_NAME(request.getParameter("BOARD_NAME"));
 		article.setBOARD_PASS(request.getParameter("BOARD_PASS"));
@@ -28,9 +29,9 @@ public class BoardReplyProAction implements Action {
 		article.setBOARD_RE_SEQ(Integer.parseInt(request.getParameter("BOARD_RE_SEQ")));
 		
 		BoardReplyProService boardReplyProService = new BoardReplyProService();
-		boolean registReplySuccess = boardReplyProService.registReply(article);
+		boolean istReplySuccess = boardReplyProService.registReply(article);
 		
-		if (registReplySuccess) {
+		if (istReplySuccess) {
 			forward = new ActionForward();
 			forward.setRedirect(true);
 			forward.setPath("boardList.bo?page=" + nowPage);

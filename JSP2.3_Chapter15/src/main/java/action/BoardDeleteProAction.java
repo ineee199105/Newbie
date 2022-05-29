@@ -24,18 +24,30 @@ public class BoardDeleteProAction implements Action {
 			response.setContentType("text/html;charset=UTF8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
-			out.println("alert('삭제실패');");
+			out.println("alert('삭제 할 권한이 없습니다.');");
 			out.println("history.back();");
 			out.println("</script>");
 			out.close();
 		}
 		else {
+			boolean isDeleteSuccess = boardDeleteProService.removeArticle(board_num);
+		
+			if(!isDeleteSuccess) {
+				response.setContentType("text/html;charset=UTF-8");
+				PrintWriter out = response.getWriter();
+				out.println("<script>");
+				out.println("alert('삭제실패');");
+				out.println("history.back();");
+				out.println("</script>");
+				out.close();
+			}
+		else {
 			forward = new ActionForward();
 			forward.setRedirect(true);
 			forward.setPath("boardList.bo?page=" + nowPage);
 		}
-		
+		}
 		return forward;
 	}
-	
 }
+

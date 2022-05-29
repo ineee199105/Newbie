@@ -12,17 +12,19 @@ public class BoardDeleteProService {
 		boolean isArticleWriter = false;
 		Connection con = getConnection();
 		BoardDAO boardDAO = BoardDAO.getInstance();
+		boardDAO.setConnection(con);
 		isArticleWriter = boardDAO.isArticleBoardWriter(board_num, pass);
 		close(con);
 		return isArticleWriter;
 		
 	}
 
-	public boolean removeAction (int board_num) throws Exception {
+	public boolean removeArticle (int board_num) throws Exception {
 		
 		boolean isRemoveSuccess = false;
 		Connection con = getConnection();
 		BoardDAO boardDAO = BoardDAO.getInstance();
+		boardDAO.setConnection(con);
 		int deleteCount = boardDAO.deleteArticle(board_num);
 		
 		if (deleteCount > 0) {

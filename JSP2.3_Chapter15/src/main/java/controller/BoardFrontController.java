@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
+import action.BoardDeleteProAction;
 import action.BoardDetailAction;
 import action.BoardListAction;
 import action.BoardModifyFormAction;
@@ -62,7 +63,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 			}
 		}
 //		게시판 답글 폼 액션
-		else if(command.equals("/boardReplyForm.bo")) {
+		else if(command.equals("/replyForm.bo")) {
 			action = new BoardReplyFormAction();
 			try {
 				forward = action.execute(request, response);
@@ -107,6 +108,7 @@ public class BoardFrontController extends javax.servlet.http.HttpServlet
 		}
 //		게시판 삭제 절차
 		else if(command.equals("/boardDeletePro.bo")) {
+			action = new BoardDeleteProAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

@@ -15,13 +15,12 @@ public class BoardModifyProAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 		
-		BoardModifyProService boardModifyProService = new BoardModifyProService();
-		BoardBean article = new BoardBean();
-		
 		ActionForward forward = null;
 		boolean isModifySuccess = false;
 		int board_num = Integer.parseInt(request.getParameter("BOARD_NUM"));
-		boolean isRightUser = boardModifyProService.isArticleWriter(board_num, request.getParameter("BOARD_NUM"));
+		BoardBean article = new BoardBean();
+		BoardModifyProService boardModifyProService = new BoardModifyProService();
+		boolean isRightUser = boardModifyProService.isArticleWriter(board_num, request.getParameter("BOARD_PASS"));
 		
 		if(!isRightUser) {
 			response.setContentType("text/html;charset=UTF-8");

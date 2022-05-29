@@ -32,6 +32,7 @@ h2 {
 table {
 	margin: auto;
 	width: 450px;
+	border : 1px solid gray;
 }
 
 #tr_top {
@@ -56,8 +57,8 @@ table {
 <body>
 	<section id="listForm">
 		<h2>
-			글 목록 <br>
-			<a href="boardWriteForm.bo">게시판 글 쓰기</a>
+		글 목록<br>
+		<a href="boardWriteForm.bo">게시판 글 쓰기</a>
 		</h2>
 		<table>
 			<%
@@ -70,19 +71,23 @@ table {
 				<td>날짜</td>
 				<td>조회수</td>
 			</tr>
+			
 			<%
-			for(int i=0; i<articleList.size(); i++){
+			for(int i=0; i<articleList.size(); i++) {
+				
 			%>
 			<tr>
 				<td><%=articleList.get(i).getBOARD_NUM() %></td>
 				<td>
-					<%if(articleList.get(i).getBOARD_RE_LEV() !=0){ %> 
-						<%for(int a=0; a<=articleList.get(i).getBOARD_RE_LEV()*2; a++){ %>%ndsp;
+					<%if(articleList.get(i).getBOARD_RE_LEV() != 0){ %> 
+						<%for(int a=0; a<=articleList.get(i).getBOARD_RE_LEV()*2; a++){ %>
+					&nbsp;
 					<%} %> 
 					 ▶ 
 					<%}else{ %>
 					 ▶ 
-					<%} %> <a href="boardDetail.bo?board_num=<%=articleList.get(i).getBOARD_NUM() %>&page=<%=nowPage %>">
+					<%} %> 
+					<a href="boardDetail.bo?board_num=<%=articleList.get(i).getBOARD_NUM() %>&page=<%=nowPage %>">
 						<%=articleList.get(i).getBOARD_SUBJECT() %>
 					</a>
 				</td>
@@ -94,9 +99,9 @@ table {
 		</table>
 	</section>
 	<section id="pageList">
-		<%if (nowPage<=1) { %>
+		<%if (nowPage <= 1) { %>
 			[이전]&nbsp;
-		<%}else{ %>
+		<% }else{ %>
 			<a href="boardList.bo?page=<%=nowPage-1 %>">[이전]</a>&nbsp;
 		<%} %>
 		
