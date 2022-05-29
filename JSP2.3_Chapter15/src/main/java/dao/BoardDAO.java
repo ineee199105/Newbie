@@ -240,6 +240,7 @@ public class BoardDAO {
 			pstmt.setString(1, article.getBOARD_SUBJECT());
 			pstmt.setString(2, article.getBOARD_CONTENT());
 			pstmt.setInt(3, article.getBOARD_NUM());
+			updateCount = pstmt.executeUpdate();
 		} catch (Exception ex) {
 			System.out.println("boardModify ¿¡·¯ : " + ex);
 		} finally {

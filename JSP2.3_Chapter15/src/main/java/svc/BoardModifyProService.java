@@ -17,6 +17,7 @@ public class BoardModifyProService {
 		boolean isArticleWriter = false;
 		Connection con = getConnection();
 		BoardDAO boardDAO = BoardDAO.getInstance();
+		boardDAO.setConnection(con);
 		isArticleWriter = boardDAO.isArticleBoardWriter(board_num, pass);
 		close(con);
 		return isArticleWriter;
