@@ -49,7 +49,7 @@ h2 {
 		<h2>글 내용 상세보기</h2>
 		<section id="basicInfoArea">
 			제목 :
-			<%=article.getBOARD_SUBJECT() %>
+			<%=article.getBOARD_SUBJECT() %><br>
 			첨부파일 :
 			<%if(!(article.getBOARD_FILE()==null)){ %>
 				<a href="file_down?downFile=<%=article.getBOARD_FILE()%>"><%=article.getBOARD_FILE() %>

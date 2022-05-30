@@ -18,7 +18,6 @@ public class BoardReplyProAction implements Action {
 		ActionForward forward = null;
 		String nowPage = request.getParameter("page");
 		BoardBean article = new BoardBean();
-		System.out.println(request.getParameter("BOARD_NAME"));
 		article.setBOARD_NUM(Integer.parseInt(request.getParameter("BOARD_NUM")));
 		article.setBOARD_NAME(request.getParameter("BOARD_NAME"));
 		article.setBOARD_PASS(request.getParameter("BOARD_PASS"));
