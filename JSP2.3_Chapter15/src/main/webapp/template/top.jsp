@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="boardList.bo">게시판 글 보기</a>
+<a href="../boardWriteForm.bo">게시판 글 쓰기</a>&nbsp;
+<a href="../boardList.bo">게시판 글 보기</a>
 </body>
 </html>

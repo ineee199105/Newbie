@@ -60,7 +60,7 @@
 			<label for = "BOARD_NAME">글쓴이</label>
 		</td>
 		<td class="td_right">
-			<input type = "text" name = "BOARD_NAME" id= "BOARD_NAME" value = "<%=article.getBOARD_NAME() %>"/>
+			<input type = "text" name = "BOARD_NAME" id= "BOARD_NAME"  value ="<%=article.getBOARD_NAME() %>"/>
 		</td>
 	</tr>
 	<tr>
@@ -92,7 +92,7 @@
 </table>
 	<section id = "commandCell">
 		<a href="javascript:modifyboard()">[수정]</a>&nbsp;&nbsp;
-		<a href="javasctipt:history.go(-1)">[뒤로]</a>
+		<a href="javascript:history.go(-1)">[뒤로]</a>
 	</section>
 </form>
 </section>

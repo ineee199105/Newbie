@@ -32,8 +32,8 @@ public class BoardModifyProAction implements Action {
 		}
 		else {
 			article.setBOARD_NUM(board_num);
-			article.setBOARD_SUBJECT("BOARD_SUBJECT");
-			article.setBOARD_CONTENT("BOARD_CONTENT");
+			article.setBOARD_SUBJECT((String)request.getAttribute("BOARD_SUBJECT"));
+			article.setBOARD_CONTENT((String)request.getAttribute("BOARD_CONTENT"));
 			isModifySuccess = boardModifyProService.modifyArticle(article);
 			
 			if(!isModifySuccess) {

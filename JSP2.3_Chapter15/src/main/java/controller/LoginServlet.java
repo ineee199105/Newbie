@@ -16,7 +16,7 @@ import vo.Member;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/Login/login")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
 		if(loginMember != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("id", id);
-			response.sendRedirect("LoginIndex.jsp");
+			response.sendRedirect("../boardList.bo");
 		}
 		else {
 			response.setContentType("text/html;charset=UTF-8");

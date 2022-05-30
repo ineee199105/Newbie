@@ -3,7 +3,14 @@ package vo;
 import java.sql.Date;
 
 public class BoardBean {
-
+	
+	@Override
+	public String toString() {
+		return "BoardBean [BOARD_NUM=" + BOARD_NUM + ", BOARD_NAME=" + BOARD_NAME + ", BOARD_PASS=" + BOARD_PASS
+				+ ", BOARD_SUBJECT=" + BOARD_SUBJECT + ", BOARD_CONTENT=" + BOARD_CONTENT + ", BOARD_FILE=" + BOARD_FILE
+				+ ", BOARD_RE_REF=" + BOARD_RE_REF + ", BOARD_RE_LEV=" + BOARD_RE_LEV + ", BOARD_RE_SEQ=" + BOARD_RE_SEQ
+				+ ", BOARD_READCOUNT=" + BOARD_READCOUNT + ", BOARD_DATE=" + BOARD_DATE + "]";
+	}
 	public int getBOARD_NUM() {
 		return BOARD_NUM;
 	}
