@@ -12,7 +12,6 @@ String nowPage = (String) request.getAttribute("page");
 <meta charset="UTF-8">
 <title>MVC 게시판</title>
 <script language="javascript">
-
 </script>
 <style type="text/html">
  
