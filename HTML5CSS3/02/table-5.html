@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+		table, th, td {
+			border:1px solid #ccc;
+		}		
+		td {
+			padding:10px;  /* 셀 테두리와 내용 사이의 간격(패딩) */
+		}
+    </style>
+</head>
+<body>
+    <p id="summary">다음 표는 HTML5를 지원하는 모던(Modern Browser)를 정리한 것입니다. 최신 버전일수록 HTML5를 좀더<br>
+    많이 지원하기 때문에 최신 버전을 다운로드 하는것이 좋습니다.</p>
+        <table aria-describedby="summary">
+            <caption>
+                <strong>Modern Browser</strong>
+                <p>국내에서 자주 사용하는 모던 브라우저</p>
+            </caption>
+            <tr>
+                <th>브라우저</th>
+                <th>제조업체</th>
+                <th>다운로드</th>
+            </tr>
+            <tr>
+                <th>크롬(Chrome)</th>
+                <td>Google</td>
+                <td>https://www.google.com/chrome</td>
+            </tr>
+            <tr>
+                <th>파이어폭스(Firefox)</th>
+                <td>Mozilla</td>
+                <td>https://www.mozilla.org/ko/firefox</td>
+            </tr>
+            <tr>
+                <th>엣지(Edge)</th>
+                <td>Microsoft</td>
+                <td>https://www.microsoft.com/ko-kr/windows/microsoft-edge</td>
+            </tr>
+        </table>
+</body>
+</html>
